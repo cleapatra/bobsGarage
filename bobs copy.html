@@ -1,0 +1,162 @@
+<html>
+<head>
+    <title>Bobs Garage</title>
+    <link rel="stylesheet" href="banner.css"
+    </head>
+<body>
+    
+    
+    
+     <ul class="topnav" id="myTopnav">
+        
+  <li><a href="#Content1">Our Cars</a></li>
+  <li><a href="#Content1">Form</a></li>
+  <li><a href="#Content2">About Us </a></li>
+  <li><a href="#Content3">Contact Us</a></li>
+
+ 
+</ul>
+    
+    
+    
+    
+
+        
+        <div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="car1.jpg">
+
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="car2.jpg">
+
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="car4.jpg">
+  
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+</script>
+        <div id="container">
+            
+            <div id="main1">
+            
+            <div id="ImageArrange">
+                
+                   <div class="hoverimg">
+                    <img class="floating-box" src="car1.jpg" alt="">
+                        
+                        <div class="hoverlayer">
+                        <div class="hoverButton">
+                        <!-- Trigger/Open The Modal -->
+<button id="myBtn">View Car details</button>
+
+<!-- The Modal -->
+<div id="mypop" class="pop">
+
+  <!-- Modal content -->
+  <div class="pop-content">
+    <span class="close">&times;</span>
+    <p>Citreon C1</p>
+  </div>
+
+</div>
+                            
+                            <script>
+// Get the modal
+var pop = document.getElementById('mypop');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    pop.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    pop.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == pop) {
+        pop.style.display = "none";
+    }
+}
+</script>
+                            </div>
+                        
+                        </div>
+                    </div>
+                
+                
+                
+<div class="floating-box">
+    <img src="car1.jpg"><p>Citreon C1</p></div>
+                <div class="floating-box"><img src="car2.jpg"><p>Renault Clio</p></div>
+                <div class="floating-box"><img src="car3.jpg"><p>Renault Clio</p></div>
+                <div class="floating-box"><img src="car1.jpg"><p>Renault Clio</p></div>
+                <div class="floating-box"><img src="car2.jpg"><p>Renault Clio</p></div>
+                <div class="floating-box"><img src="car3.jpg"><p>Renault Clio</p></div>
+
+
+                </div>
+            </div>
+            
+            <div id="main2">
+            
+            <div id="AboutUs">
+            
+            
+                   <div class="Aboutimg"><img src="saleslady.jpg"><p>Claire</p></div>
+                   <div class="Aboutimg"><img src="saleslady.jpg"><p>Chelly</p></div>
+                   <div class="Aboutimg"><img src="saleslady.jpg"><p>Tracy</p></div>
+                
+                
+            </div>
+            </div>
+    
+    </div>
+    
+    </body>
+</html>

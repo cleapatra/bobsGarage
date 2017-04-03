@@ -1,13 +1,239 @@
 <html>
 <head>
     <title>Bobs Garage</title>
-    <link rel="stylesheet" href="banner.css">
-    
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/RentalForm.css">
     
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+     <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+    <script type="text/javascript" language="JavaScript">
+      
+        function validateForename(){
+            var hit = 0;
+           //Forename validation
+            var fn = document.forms["RentalForm"]["forename"].value;
+            if (fn == "") {
+                document.getElementById("fnv").style.display = 'block';
+                hit = 1;
+                //return false;  
+            } else if (fn.length > 29) {
+                document.getElementById("fnv1").style.display = 'block';
+                hit = 1;
+                //return false;
+            } else if (fn.match(/^\d+$/)) {
+                document.getElementById("fnv2").style.display = 'block';
+                hit = 1;
+                //return false;
+            }
+            else{
+                document.getElementById("fnv2").style.display = 'none'; 
+            }
+        }
+            
+            
+        function validateSurname(){
+            var hit = 0;
+           var sn = document.forms["RentalForm"]["surname"].value;
+            if (sn == "") {
+                document.getElementById("snv").style.display = 'block';
+                hit = 1;
+                // return false;  
+            } 
+            else if (sn.length > 29) {
+                document.getElementById("snv1").style.display = 'block';
+                hit = 1;
+                
+            } 
+            
+            else if (sn.match(/^\d+$/)) {
+                document.getElementById("snv2").style.display = 'block';
+                hit = 1;
+            }
+            else {
+                document.getElementById("snv").style.display = 'none';
+                document.getElementById("snv1").style.display = 'none';
+                document.getElementById("snv2").style.display = 'none';
+            }
+
+        }
+            
+            function validatePostcode(){
+                   var hit = 0;
+            //Postcode validation
+            var pc = document.forms["RentalForm"]["postcode"].value;
+            pc = pc.replace(/\s/g, "");
+            var regex = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
+            if (regex.test(pc) != true) {
+                document.getElementById("pc").style.display = 'block';
+                hit = 1;
+            }
+                else{
+                    document.getElementById("pc").style.display = 'none';
+                }
+
+                
+            }
+        
+            function validateEmail(){
+                   var hit = 0;
+           var emailx = document.forms["RentalForm"]["email"].value;
+    var atpos = emailx.indexOf("@");
+    var dotpos = emailx.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=emailx.length) {
+         document.getElementById("emailv").style.display = 'block';
+        hit = 1;
+    }
+                else{
+                    document.getElementById("emailv").style.display = 'none';
+                }
+
+                
+            }
+            
+            function validateAge(){
+                var hit = 0;
+                 //Age validation
+            var age = document.forms["RentalForm"]["age"].value;
+            if (age < 17) {
+                document.getElementById("agev").style.display = 'block';
+                hit = 1;
+            }
+            if (isNaN(age)) {
+                document.getElementById("agev2").style.display = 'block';
+                hit = 1;
+            }
+            else if (age > 16){
+                 document.getElementById("agev").style.display = 'none';
+                document.getElementById("agev2").style.display = 'none'; 
+            }
+                
+            }
+            
+
+        function validateForm() 
+        {
+          var hit = 0;
+            
+          //Forename validation
+          var fn = document.forms["RentalForm"]["forename"].value;
+          if (fn == "") 
+          {
+              document.getElementById("fnv").style.display = 'block';
+              hit=1;
+              //return false;  
+          }
+             else if (fn.length > 29) 
+             {
+                 document.getElementById("fnv1").style.display = 'block';
+                  hit=1;
+                //return false;
+             }
+
+            else if (!fn.match(/^[a-z]+$/)) 
+             {
+                 document.getElementById("fnv2").style.display = 'block';
+                  hit=1;
+                //return false;
+             }
+            
+            else if (fn.length < 29) 
+             {
+                 document.getElementById("fnv").style.display = 'none';
+                 document.getElementById("fnv1").style.display = 'none';
+                 document.getElementById("fnv2").style.display = 'none';
+                //return false;
+             }
+            
+            
+             //Surname validation
+            
+            var sn = document.forms["RentalForm"]["surname"].value;
+          if (sn == "") 
+          {
+            document.getElementById("snv").style.display = 'block';
+              hit=1;
+           // return false;  
+          }
+             else if (sn.length > 29) 
+             {
+              document.getElementById("snv1").style.display = 'block';
+               hit=1;
+             }
+             
+             else if (fn.match(/^\d+$/)) 
+             {
+               document.getElementById("snv2").style.display = 'block';
+                 hit=1;
+             }
+            
+             else if (sn.length < 29) 
+             {
+              document.getElementById("snv").style.display = 'none';
+                  document.getElementById("snv1").style.display = 'none';
+                 document.getElementById("snv2").style.display = 'none';
+             }
+
+            //Postcode validation
+            var pc = document.forms["RentalForm"]["postcode"].value;
+            pc = pc.replace(/\s/g, "");
+            var regex = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
+            if (regex.test(pc) != true)
+                {
+                   document.getElementById("pc").style.display = 'block';
+                    hit = 1;
+                }
+            else if (regex.test(pc) != false)
+                {
+                   document.getElementById("pc").style.display = 'none';
+                }
+            
+            //Age validation
+            var age = document.forms["RentalForm"]["age"].value;
+            if(age <17)
+            {
+                document.getElementById("agev").style.display = 'block';
+                hit = 1;
+            }
+            if (isNaN(age)) 
+             {
+                document.getElementById("agev2").style.display = 'block';
+                hit = 1;
+             }
+            else if(age <17)
+            {
+                document.getElementById("agev").style.display = 'none';
+            }
+            
+            //email validation
+           var emailx = document.forms["RentalForm"]["email"].value;
+    var atpos = emailx.indexOf("@");
+    var dotpos = emailx.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=emailx.length) {
+         document.getElementById("emailv").style.display = 'block';
+    }
+             else if (atpos>1 || dotpos>atpos+2 || dotpos+2<x.length) {
+         document.getElementById("emailv").style.display = 'none';
+    }
+           
+            
+            
+            if (hit == 1) 
+                 {
+                     return false;
+                 }
+}
+         
+    </script>
+    
   <script>
  
+
 $(document).ready(function(){
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
@@ -286,7 +512,222 @@ Show all cars
             
             
                  <h2>Hire Form</h2>
+                <div id="form_container">
+
+
+        <form name="RentalForm" onsubmit="return validateForm();">
+            <h2 id="form">Rent a Car</h2>
+
+
+
+            <h3 id="form">Your Details</h3>
+            <table>
+                <tr>
+                    <td>
+                        <label class="description" for="forename">Forename </label>
+                    </td>
+                    <td>
+      			<input id="forename" name= "forename" class="element text" maxlength="255" size="8" value="" onChange="validateForename();"/>
+      			
+                        </td><td>
+            
+                         <input type="text" id="fnv" name="fnv" class="" maxlength="30" size="14" value="Forename must not be blank" style="display: none;" Readonly = "Readonly"/>
                 
+                
+               
+                         <input type="text" id="fnv1" name="fnv1" class="" maxlength="30" size="14" value="Forename must be less than 30 characters" style="display: none;" Readonly = "Readonly" width="70px"/>
+               
+                
+                
+                         <input type="text" id="fnv2" name="fnv2" class="" maxlength="30" size="14" value="Forename must be characters only" style="display: none;" Readonly = "Readonly" width="70px"/>
+
+                        
+                        
+                        
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Surname</label>
+                    </td>
+                    <td> <span>
+      			<input id="element_1_2" name= "surname" class="element text" maxlength="255" size="14" value="" onChange="validateSurname();"/>
+      			
+      		</span>
+                    </td>
+                    
+                    <td>
+                     <input type="text" id="snv" name="snv" class="" maxlength="30" size="14" value="Surname must not be blank" style="display: none;" Readonly = "Readonly"/>
+                        
+                    <input type="text" id="snv1" name="snv2" class="" maxlength="30" size="14" value="Surname must be less than 30 characters" style="display: none;" Readonly = "Readonly"/>
+                        
+                  <input type="text" id="snv2" name="snv3" class="" maxlength="30" size="14" value="Surname cannot contain numbers" style="display: none;" Readonly = "Readonly"/>
+                  
+                    </td>
+                    
+                    
+                </tr>
+                
+                
+                <tr>
+                    <td>
+                    <label for="age">Age</label></td>
+                    <td><input type="text" id="age" name="age" class="surname" size="14" value="" onChange="validateAge();"/></td>
+                 
+                <td>
+                    <input type="text" id="agev" name="agev" class="" maxlength="30" size="14" value="You must be at least 17 to rent a car!" style="display: none;" Readonly="Readonly"/>
+                   
+        
+                    <input type="text" id="agev2" name="agev2" class="" maxlength="30" size="14" value="Age must be numbers only" style="display: none;" Readonly="Readonly"/>
+                 
+                    
+                    
+                    
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <label>Email</label>
+                    </td>
+                    <td> 
+      			<input id="element_1_3" name= "email" class="element text" maxlength="255" size="14" onChange="validateEmail();"/></td>
+                    <td><input type="text" id="emailv" name="emailv" class="" maxlength="30" size="14" value="Invalid Email Address" style="display: none;" Readonly="Readonly"/></td>
+                </tr>
+            </table>
+            <hr>
+            <h3 id="form">Billing Address</h3>
+            <table>
+
+
+
+                <tr>
+                    <td>
+                        <label for="element_2_1">Address </label>
+                    </td>
+
+                    <td>
+                        <input id="element_2_1" name="address" class="element text large" value="" type="text">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input id="element_2_2" name="address2" class="element text large" value="" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="element_2_3">Town/City</label>
+                    </td>
+                    <td>
+                        <input id="element_2_3" name="town" class="element text medium" value="" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="element_2_4">County/Region</label>
+                    </td>
+                    <td>
+                        <input id="element_2_4" name="county" class="element text medium" value="" type="text">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label for="element_2_5">Postcode</label>
+                    </td>
+                    <td>
+                        <input id="postcode" name="postcode" class="element text medium" maxlength="15" value="" type="text" onChange="validatePostcode();">
+                    </td>
+                    
+                    <td>  
+                    <input type="text" id="pc" name="pc" class="" maxlength="30" size="14" value="Postcode must be in following format: LLNN NLL" style="display: none;" Readonly="Readonly"/>
+                    </td>
+
+                </tr>
+            </table>
+            <hr>
+            <h3 id="form">Rental Information</h3>
+            <table>
+                <tr>
+                    <td>
+                        <label class="description" for="element_5">Your Rental Car </label>
+                    </td>
+
+                    <td>
+                        <select class="element select medium" id="element_5" name="carselected">
+                            <option value="" selected="selected"></option>
+                            <option value="1">First option</option>
+                            <option value="2">Second option</option>
+                            <option value="3">Third option</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="description" for="element_3">Hire from:</label>
+                    </td>
+                    <td><input type="text" id="datepicker" name="hirefrom"><i class="fa fa-calendar" aria-hidden="true"></i>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <label class="description" for="element_4">Until: </label>
+                    </td>
+
+                    <td><input type="text" id="datepicker" name="hireuntil"><i class="fa fa-calendar" aria-hidden="true"></i>
+                </tr>
+                </td>
+                <tr>
+                    <td>
+                        <label class="description" for="element_8">Which member of our team referred you </label>
+                    </td>
+
+                    <td>
+                        <select class="element select medium" id="element_8" name="element_8">
+                            <option value="" disabled selected>Choose a car</option>
+                            <option value="1">First option</option>
+                            <option value="2">Second option</option>
+                            <option value="3">Third option</option>
+
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="description" for="element_6">Rental will cost </label>
+                    </td>
+                    <td><span class="symbol">$</span>
+                        <span>
+      			<input id="element_6_1" name="element_6_1" class="element text currency" size="10" value="" type="text" /> .
+      			<label for="element_6_1">Dollars</label>
+      		</span>
+                        <span>
+      			<input id="element_6_2" name="element_6_2" class="element text" size="2" maxlength="2" value="" type="text"/>
+      			<label for="element_6_2">Cents</label>
+      		</span>
+                    </td>
+
+
+                    <tr>
+                        <th>
+                            <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+                        </th>
+                    </tr>
+
+            </table>
+
+        </form>
+
+    </div>
+
+    <!-- end of form -->
                 
                 
             </div>
@@ -316,6 +757,8 @@ span.onclick = function() {
 </script>
 
     </div>
+            
+            
     
     </body>
 </html>
