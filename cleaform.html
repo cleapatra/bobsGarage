@@ -1,0 +1,180 @@
+<html>
+
+<head>
+    <title>Hire Form</title>
+    </head>
+    
+    <body>
+
+
+<div id="form_container">
+
+
+      		<form id="form_17526" class="appnitro" onsubmit="storevalues();"action="confirm.html">
+      					<div class="form_description">
+      			<h2 id="form">Rent a Car</h2>
+
+      		</div>
+      			<ul id="hire_form">
+                    <h3 id="form">Your Details</h3>
+                    <table>
+      					<li id="li_1" >
+      		<label class="description" for="element_1">Forename </label>
+      		<span>
+      			<input id="element_1_1" name= "forename" class="element text" maxlength="255" size="8" value=""/>
+      			
+      		</span>
+            <label>Surname</label>
+      		<span>
+      			<input id="element_1_2" name= "surname" class="element text" maxlength="255" size="14" value=""/>
+      			
+      		</span>
+                 <label>Email</label>
+                            	<span>
+      			<input id="element_1_3" name= "email" class="element text" maxlength="255" size="14" value=""/>
+      			
+      		</span>
+      		</li>	 <hr>	
+                    <h3 id="form">Billing Address</h3>
+                       <li id="li_2" >
+      		
+
+      		<div>
+                <label for="element_2_1">Address </label>
+      			<input id="element_2_1" name="address" class="element text large" value="" type="text">
+      		</div>
+
+      		<div>
+      			<input id="element_2_2" name="address2" class="element text large" value="" type="text">
+      			
+      		</div>
+
+      		<div class="left">
+                <label for="element_2_3">Town/City</label>
+      			<input id="element_2_3" name="town" class="element text medium" value="" type="text">
+      			
+      		</div>
+
+      		<div class="right">
+      			<input id="element_2_4" name="county" class="element text medium" value="" type="text">
+      			<label for="element_2_4">County/Region</label>
+      		</div>
+
+      		<div class="left">
+      			<input id="element_2_5" name="postcode" class="element text medium" maxlength="15" value="" type="text">
+      			<label for="element_2_5">Postcode</label>
+      		</div>
+      		</li>	 <hr>	
+                        <h3 id="form">Rental Information</h3>
+                    <li id="li_5" >
+      		<label class="description" for="element_5">Your Rental Car </label>
+      		<div>
+      		<select class="element select medium" id="element_5" name="carselected">
+      			<option value="" selected="selected"></option>
+      <option value="1" >First option</option>
+      <option value="2" >Second option</option>
+      <option value="3" >Third option</option>
+
+      		</select>
+      		</div>
+      		</li>		<li id="li_3" >
+      		<label class="description" for="element_3">Hire from:</label>
+      		<span>
+      			<input id="element_3_1" name="element_3_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+      			<label for="element_3_1">MM</label>
+      		</span>
+      		<span>
+      			<input id="element_3_2" name="element_3_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+      			<label for="element_3_2">DD</label>
+      		</span>
+      		<span>
+      	 		<input id="element_3_3" name="element_3_3" class="element text" size="4" maxlength="4" value="" type="text">
+      			<label for="element_3_3">YYYY</label>
+      		</span>
+
+      		<span id="calendar_3">
+      			<img id="cal_img_3" class="datepicker" src="form/calendar.gif" alt="Pick a date.">
+      		</span>
+      		<script type="text/javascript">
+      			Calendar.setup({
+      			inputField	 : "element_3_3",
+      			baseField    : "element_3",
+      			displayArea  : "calendar_3",
+      			button		 : "cal_img_3",
+      			ifFormat	 : "%B %e, %Y",
+      			onSelect	 : selectDate
+      			});
+      		</script>
+<i class="fa fa-calendar" aria-hidden="true"></i>
+      		</li>		<li id="li_4" >
+      		<label class="description" for="element_4">Until: </label>
+      		<span>
+      			<input id="element_4_1" name="element_4_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+      			<label for="element_4_1">MM</label>
+      		</span>
+      		<span>
+      			<input id="element_4_2" name="element_4_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+      			<label for="element_4_2">DD</label>
+      		</span>
+      		<span>
+      	 		<input id="element_4_3" name="element_4_3" class="element text" size="4" maxlength="4" value="" type="text">
+      			<label for="element_4_3">YYYY</label>
+      		</span>
+
+      		<span id="calendar_4">
+      			<img id="cal_img_4" class="datepicker" src="form/calendar.gif" alt="Pick a date.">
+      		</span>
+      		<script type="text/javascript">
+      			Calendar.setup({
+      			inputField	 : "element_4_3",
+      			baseField    : "element_4",
+      			displayArea  : "calendar_4",
+      			button		 : "cal_img_4",
+      			ifFormat	 : "%B %e, %Y",
+      			onSelect	 : selectDate
+      			});
+      		</script>
+<i class="fa fa-calendar" aria-hidden="true"></i>
+      		</li>		<li id="li_8" >
+      		<label class="description" for="element_8">Which member of our team referred you </label>
+      		<div>
+      		<select class="element select medium" id="element_8" name="element_8">
+      			<option value="" selected="selected"></option>
+      <option value="1" >First option</option>
+      <option value="2" >Second option</option>
+      <option value="3" >Third option</option>
+
+      		</select>
+      		</div>
+      		</li>		<li class="section_break">
+      			<h3></h3>
+      			<p></p>
+      		</li>		<li id="li_6" >
+      		<label class="description" for="element_6">Rental will cost </label>
+      		<span class="symbol">$</span>
+      		<span>
+      			<input id="element_6_1" name="element_6_1" class="element text currency" size="10" value="" type="text" /> .
+      			<label for="element_6_1">Dollars</label>
+      		</span>
+      		<span>
+      			<input id="element_6_2" name="element_6_2" class="element text" size="2" maxlength="2" value="" type="text" />
+      			<label for="element_6_2">Cents</label>
+      		</span>
+
+      		</li>
+
+      					<li class="buttons">
+      			    <input type="hidden" name="form_id" value="17526" />
+
+      				<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+      		</li>
+                        </table>
+      			</ul>
+      		</form>
+      		
+      	</div>
+
+        <!-- end of form -->
+        
+    </body>
+</html>
