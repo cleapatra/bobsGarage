@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+         <link rel="stylesheet" type="text/css" href="RentalForm.css" media="all">
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+         document.getElementById("emailv").style.display = 'block';
+  return false;
+    }
+}
+</script>
+</head>
+
+<body>
+<form name="myForm"  onsubmit="return validateForm();" method="post">
+Email: <input type="text" name="email">
+
+    
+    
+                        <div>
+                         <input type="text" id="emailv" name="email" class="" maxlength="30" size="14" value="Invalid email" style="display: none;" Readonly = "Readonly"/>
+    </div>
+    
+<input type="submit" value="Submit">
+</form>
+</body>
+
+</html>
