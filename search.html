@@ -1,0 +1,130 @@
+<script> 
+function showForm() {
+    document.getElementById("form_container").style.display = "block";
+};
+
+$(document).ready(function(){
+$("#showall").click(function(){
+  $(".carrental").find("div").fadeOut("fast");
+    $(".carrental").find("div").slideDown("slow");
+      });
+  });
+
+
+
+
+$(document).ready(function(){
+$("#search").click(function(){
+    $(".carrental").find("div").fadeOut("fast");
+      var txt = "." + $('#search-criteria').val().toLowerCase();
+        $(".carrental").find(txt).slideDown("slow");
+});
+
+$('#search-criteria').keypress(function(e){
+      if(e.which == 13){//Enter key pressed
+          $('#search').click();//Trigger search button click event
+      }
+  });
+});
+
+$(document).ready(function(){
+$("#searchSmall").click(function(){
+  $(".carrental").find("div").fadeOut("fast");
+    $(".carrental").find(".small").slideDown("slow");
+});
+});
+
+
+$(document).ready(function(){
+$("#searchMedium").click(function(){
+$(".carrental").find("div").fadeOut("fast");
+  $(".carrental").find(".medium").slideDown("slow");
+});
+});
+
+
+$(document).ready(function(){
+$("#searchLarge").click(function(){
+$(".carrental").find("div").fadeOut("fast");
+  $(".carrental").find(".large").slideDown("slow");
+});
+});
+
+$(document).ready(function(){
+$("#red").click(function(){
+$(".carrental").find("div").fadeOut("fast");
+  $(".carrental").find(".red").slideDown("slow");
+});
+});
+
+$(document).ready(function(){
+$("#blue").click(function(){
+$(".carrental").find("div").fadeOut("fast");
+  $(".carrental").find(".blue").slideDown("slow");
+});
+});
+
+$(document).ready(function(){
+$("#white").click(function(){
+$(".carrental").find("div").fadeOut("fast");
+  $(".carrental").find(".white").slideDown("slow");
+});
+});
+
+$(document).ready(function(){
+$("#grey").click(function(){
+$(".carrental").find("div").fadeOut("Fast");
+  $(".carrental").find(".grey").slideDown("slow");
+});
+});
+</script>
+
+
+
+<div >
+      <h2 style=" color:#578c9d">Search for your rental car!</h2>
+
+    <input type="text" id="search-criteria" class="form-control input-lg" placeholder="" />
+<pan>
+    <button id="search" value = "search" type="button"> Search</button>
+    </span>
+
+
+
+
+
+
+
+
+            <h2 style="color:#eb5f4e" >Search by car type</h2>
+            <button id="searchSmall" type="button">
+            Small
+          </button>
+          <button id="searchMedium" type="button">
+          Medium
+        </button>
+        <button id="searchLarge" type="button">
+        Large
+      </button>
+
+
+
+
+
+
+
+            <h2 style="color:#eb5f4e">Search by colour</h2>
+<table>
+  <button id="red" type="button" style="background-color:Red"> &nbsp;  </button> &nbsp;
+  <button id="blue" type="button" style="background-color:Blue"> &nbsp; </button>&nbsp;
+  <button id="white" type="button" style="background-color:white"> &nbsp; </button>&nbsp;
+  <button id="grey" type="button" style="background-color:grey"> &nbsp; </button>
+</table>
+
+
+
+<h2 style="color:#eb5f4e" >&nbsp; </h2>
+<button id="showall" type="button">
+Show all cars
+</button>
+        </div>
