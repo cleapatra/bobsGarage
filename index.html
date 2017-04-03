@@ -20,6 +20,8 @@
     <script src="js/jquery-3.2.0.js"></script>
     <script type="text/javascript" src="form/view.js"></script>
     <script type="text/javascript" src="form/calendar.js"></script>
+    <!--Font awesome script - for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -108,7 +110,32 @@ $("#grey").click(function(){
 });
 });
     </script>
+<script>
+    // COOKIES
+ 
+  var today = new Date();
+  var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
 
+  function setCookie(name, value)
+  {
+    document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+  }   
+   
+      function storevalues()  
+  {
+    setCookie("forename", form.forename.value);
+    setCookie("surname", form.surname.value);
+    setCookie("email", form.email.value);
+    setCookie("address", form.address.value);
+    setCookie("address2", form.address2.value);
+    setCookie("town", form.town.value);
+    setCookie("county", form.county.value);
+    setCookie("postcode", form.postcode.value);
+    setCookie("carselected", form.carselected.value);
+    return true;
+  }
+    
+    </script>
 
 
 </head>
@@ -398,63 +425,66 @@ Show all cars
       	<div style="display: none" id="form_container">
 
 
-      		<form id="form_17526" class="appnitro"  method="post" action="">
+      		<form id="form_17526" class="appnitro" onsubmit="storevalues();"action="confirm.html">
       					<div class="form_description">
-      			<h2 id="form">Rental Form</h2>
+      			<h2 id="form">Rent a Car</h2>
 
       		</div>
-      			<ul >
-
+      			<ul id="hire_form">
+                    <h3 id="form">Your Details</h3>
+                    <table>
       					<li id="li_1" >
-      		<label class="description" for="element_1">Name </label>
+      		<label class="description" for="element_1">Forename </label>
       		<span>
-      			<input id="element_1_1" name= "element_1_1" class="element text" maxlength="255" size="8" value=""/>
-      			<label>First</label>
+      			<input id="element_1_1" name= "forename" class="element text" maxlength="255" size="8" value=""/>
+      			
       		</span>
+            <label>Surname</label>
       		<span>
-      			<input id="element_1_2" name= "element_1_2" class="element text" maxlength="255" size="14" value=""/>
-      			<label>Last</label>
+      			<input id="element_1_2" name= "surname" class="element text" maxlength="255" size="14" value=""/>
+      			
       		</span>
-      		</li>		<li id="li_2" >
-      		<label class="description" for="element_2">Address </label>
+                 <label>Email</label>
+                            	<span>
+      			<input id="element_1_3" name= "email" class="element text" maxlength="255" size="14" value=""/>
+      			
+      		</span>
+      		</li>	 <hr>	
+                    <h3 id="form">Billing Address</h3>
+                       <li id="li_2" >
+      		
 
       		<div>
-      			<input id="element_2_1" name="element_2_1" class="element text large" value="" type="text">
-      			<label for="element_2_1">Street Address</label>
+                <label for="element_2_1">Address </label>
+      			<input id="element_2_1" name="address" class="element text large" value="" type="text">
       		</div>
 
       		<div>
-      			<input id="element_2_2" name="element_2_2" class="element text large" value="" type="text">
-      			<label for="element_2_2">Address Line 2</label>
+      			<input id="element_2_2" name="address2" class="element text large" value="" type="text">
+      			
       		</div>
 
       		<div class="left">
-      			<input id="element_2_3" name="element_2_3" class="element text medium" value="" type="text">
-      			<label for="element_2_3">City</label>
+                <label for="element_2_3">Town/City</label>
+      			<input id="element_2_3" name="town" class="element text medium" value="" type="text">
+      			
       		</div>
 
       		<div class="right">
-      			<input id="element_2_4" name="element_2_4" class="element text medium" value="" type="text">
-      			<label for="element_2_4">State / Province / Region</label>
+      			<input id="element_2_4" name="county" class="element text medium" value="" type="text">
+      			<label for="element_2_4">County/Region</label>
       		</div>
 
       		<div class="left">
-      			<input id="element_2_5" name="element_2_5" class="element text medium" maxlength="15" value="" type="text">
-      			<label for="element_2_5">Postal / Zip Code</label>
+      			<input id="element_2_5" name="postcode" class="element text medium" maxlength="15" value="" type="text">
+      			<label for="element_2_5">Postcode</label>
       		</div>
-
-      		<div class="right">
-      			<select class="element select medium" id="element_2_6" name="element_2_6">
-      			<option value="" selected="selected"></option>
-
-
-      			</select>
-      		<label for="element_2_6">Country</label>
-      	</div>
-      		</li>		<li id="li_5" >
-      		<label class="description" for="element_5">Which car to rent. </label>
+      		</li>	 <hr>	
+                        <h3 id="form">Rental Information</h3>
+                    <li id="li_5" >
+      		<label class="description" for="element_5">Your Rental Car </label>
       		<div>
-      		<select class="element select medium" id="element_5" name="element_5">
+      		<select class="element select medium" id="element_5" name="carselected">
       			<option value="" selected="selected"></option>
       <option value="1" >First option</option>
       <option value="2" >Second option</option>
@@ -463,7 +493,7 @@ Show all cars
       		</select>
       		</div>
       		</li>		<li id="li_3" >
-      		<label class="description" for="element_3">When will rental start </label>
+      		<label class="description" for="element_3">Hire from:</label>
       		<span>
       			<input id="element_3_1" name="element_3_1" class="element text" size="2" maxlength="2" value="" type="text"> /
       			<label for="element_3_1">MM</label>
@@ -490,9 +520,9 @@ Show all cars
       			onSelect	 : selectDate
       			});
       		</script>
-
+<i class="fa fa-calendar" aria-hidden="true"></i>
       		</li>		<li id="li_4" >
-      		<label class="description" for="element_4">When will rental end </label>
+      		<label class="description" for="element_4">Until: </label>
       		<span>
       			<input id="element_4_1" name="element_4_1" class="element text" size="2" maxlength="2" value="" type="text"> /
       			<label for="element_4_1">MM</label>
@@ -519,7 +549,7 @@ Show all cars
       			onSelect	 : selectDate
       			});
       		</script>
-
+<i class="fa fa-calendar" aria-hidden="true"></i>
       		</li>		<li id="li_8" >
       		<label class="description" for="element_8">Which member of our team referred you </label>
       		<div>
@@ -553,6 +583,7 @@ Show all cars
 
       				<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
       		</li>
+                        </table>
       			</ul>
       		</form>
       		<div id="footer">
@@ -566,7 +597,7 @@ Show all cars
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Bob's Garage &copy; 2017</p>
                 </div>
             </div>
 
