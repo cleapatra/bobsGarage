@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bobs Garage</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/3-col-portfolio.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="form/view.css" media="all">
+    <script src="js/jquery-3.2.0.js"></script>
+    <script type="text/javascript" src="form/view.js"></script>
+    <script type="text/javascript" src="form/calendar.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <script>
+    function showForm() {
+        document.getElementById("form_container").style.display = "block";
+    };
+
+    $(document).ready(function(){
+    $("#showall").click(function(){
+      $(".carrental").find("div").fadeOut("fast");
+        $(".carrental").find("div").slideDown("slow");
+          });
+      });
+
+
+
+
+    $(document).ready(function(){
+  	$("#search").click(function(){
+      	$(".carrental").find("div").fadeOut("fast");
+          var txt = "." + $('#search-criteria').val().toLowerCase();
+            $(".carrental").find(txt).slideDown("slow");
+  	});
+
+  $('#search-criteria').keypress(function(e){
+          if(e.which == 13){//Enter key pressed
+              $('#search').click();//Trigger search button click event
+          }
+      });
+});
+
+  $(document).ready(function(){
+  $("#searchSmall").click(function(){
+      $(".carrental").find("div").fadeOut("fast");
+        $(".carrental").find(".small").slideDown("slow");
+  });
+    });
+
+
+$(document).ready(function(){
+$("#searchMedium").click(function(){
+    $(".carrental").find("div").fadeOut("fast");
+      $(".carrental").find(".medium").slideDown("slow");
+});
+});
+
+
+$(document).ready(function(){
+$("#searchLarge").click(function(){
+    $(".carrental").find("div").fadeOut("fast");
+      $(".carrental").find(".large").slideDown("slow");
+});
+});
+
+$(document).ready(function(){
+$("#red").click(function(){
+    $(".carrental").find("div").fadeOut("fast");
+      $(".carrental").find(".red").slideDown("slow");
+});
+});
+
+$(document).ready(function(){
+$("#blue").click(function(){
+    $(".carrental").find("div").fadeOut("fast");
+      $(".carrental").find(".blue").slideDown("slow");
+});
+});
+
+$(document).ready(function(){
+$("#white").click(function(){
+    $(".carrental").find("div").fadeOut("fast");
+      $(".carrental").find(".white").slideDown("slow");
+});
+});
+
+$(document).ready(function(){
+$("#grey").click(function(){
+    $(".carrental").find("div").fadeOut("Fast");
+      $(".carrental").find(".grey").slideDown("slow");
+});
+});
+    </script>
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                  <img alt="Brand" src="images/logo.png" height=100px>
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Cars</a>
+                    </li>
+                    <li>
+                        <a href="#team">Rental Team</a>
+                    </li>
+                    <li>
+                        <a href="#form">Rental Form</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+      <!-- Search and filter search bar div starts  -->
+    	<div class="row">
+            <div class="col-lg-12">
+        		<h2 style=" color:#578c9d">Search for your rental car!</h2>
+        <!--   <div id="custom-search-input"> -->
+        <div>
+                    <div class="input-group col-md-12">
+                        <input type="text" id="search-criteria" class="form-control input-lg" placeholder="" />
+                        <span class="input-group-btn">
+                            <button id="search" class="btn btn-info btn-lg" value = "search" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+    	</div>
+
+      <div class="row">
+          <div class="col-lg-4">
+              <h2 style="color:#eb5f4e" class="page-header" >Search by car type</h2>
+              <button id="searchSmall" class="btn btn-info btn-lg" type="button">
+              Small
+            </button>
+            <button id="searchMedium" class="btn btn-info btn-lg" type="button">
+            Medium
+          </button>
+          <button id="searchLarge" class="btn btn-info btn-lg" type="button">
+          Large
+        </button>
+          </div>
+
+          <div class="col-lg-4">
+  <h2 style="color:#eb5f4e" class="page-header" >&nbsp; </h2>
+  <button id="showall" class="btn btn-info btn-sm " type="button">
+Show all cars
+</button>
+
+          </div>
+
+          <div class="col-lg-4">
+              <h2 style="color:#eb5f4e" class="page-header">Search by colour</h2>
+<table>
+    <button id="red" class="btn btn-info btn-lg" type="button" style="background-color:Red"> &nbsp;  </button> &nbsp;
+    <button id="blue" class="btn btn-info btn-lg" type="button" style="background-color:Blue"> &nbsp; </button>&nbsp;
+    <button id="white" class="btn btn-info btn-lg" type="button" style="background-color:white"> &nbsp; </button>&nbsp;
+    <button id="grey" class="btn btn-info btn-lg" type="button" style="background-color:grey"> &nbsp; </button>
+</table>
+          </div>
+
+      </div>
+    </div>
+
+<!-- Search and filter search bar div ends  -->
+
+
+
+    <div class="container">
+
+
+        <!-- Car list starts  -->
+        <!-- car list header  -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 style=" color:#578c9d" class="page-header">List of Cars Available!</h1>
+            </div>
+        </div>
+
+
+        <!-- new row called carrental used in js to search car list  -->
+        <div class="row carrental">
+
+          <!-- Citreon c1 div starts here  -->
+
+            <div class="  citreon c1 small £50 5 white col-md-4 portfolio-item">
+
+              <h3>
+                  Citreon C1
+              </h3>
+                <a href="#">
+                    <img class="img-responsive" src="images/c1white.jpg" alt="">
+                </a>
+
+                  <p>Model: Citreon C1</p>
+                    <p>Colour: White</p>
+                      <p>Seats: 5</p>
+                        <p>Price: £50/day</p>
+                <a href="#form">
+                  <button class="btn btn-info btn-lg" type="button"  onclick="showForm()">
+                  Hire Me!
+                </button>
+              </a>
+            </div>
+
+            <!-- Citreon c1 div ends here  -->
+
+            <!-- renault clio blue div starts here  -->
+            <div class=" renault clio medium blue 5 £75 col-md-4  portfolio-item">
+              <h3>
+                  Renault Clio
+              </h3>
+                <a href="#">
+                    <img class="img-responsive" src="images/clioblue.jpg" alt="">
+                </a>
+
+                  <p>Model: Renault Clio</p>
+                    <p>Colour: Blue</p>
+                      <p>Seats: 5</p>
+                        <p>Price: £75/day</p>
+                        <a href="#form">
+                          <button class="btn btn-info btn-lg" type="button"  onclick="showForm()">
+                          Hire Me!
+                        </button>
+                      </a>
+                </div>
+<!-- renault clio blue div ends here  -->
+
+<!-- renault clio red div starts here  -->
+            <div class=" renault clio medium red 5 £75 col-md-4  portfolio-item">
+              <h3>
+                Renault Clio
+              </h3>
+                <a href="#">
+                    <img class="img-responsive" src="images/cliored.jpg" alt="">
+                </a>
+
+                <p>Model: Renault Clio</p>
+                  <p>Colour: Red</p>
+                    <p>Seats: 5</p>
+                      <p>Price: £75/day</p>
+
+                      <a href="#form">
+                        <button class="btn btn-info btn-lg" type="button"  onclick="showForm()">
+                        Hire Me!
+                      </button>
+                    </a>
+                </div>
+<!-- renault clio red div ends here  -->
+
+        <!-- renault kadjar  div starts here  -->
+
+            <div class=" renault kadjar red large 7 £100 col-md-4  portfolio-item">
+              <h3>
+                  Renault Kadjar
+              </h3>
+                <a href="#">
+                    <img class="img-responsive" src="images/kadjarred.jpg" alt="">
+                </a>
+
+
+                <p>Model: Renault Kadjar</p>
+                  <p>Colour: Red</p>
+                    <p>Seats: 7</p>
+                      <p>Price: £100/day</p>
+
+                      <a href="#form">
+                        <button class="btn btn-info btn-lg" type="button"  onclick="showForm()">
+                        Hire Me!
+                      </button>
+                    </a>
+                  </div>
+
+<!-- renault kadjar div ends here  -->
+
+<!-- ford galaxy  div starts here  -->
+
+            <div class="  large ford galaxy grey 7 £100 col-md-4  portfolio-item">
+              <h3>
+                  Ford Galaxy
+              </h3>
+                <a href="#">
+                    <img class="img-responsive" src="images/fordgalaxygrey.jpg" alt="">
+                </a>
+
+                <p>Model: Ford Galaxy</p>
+                  <p>Colour: Grey</p>
+                    <p>Seats: 7</p>
+                      <p>Price: £100/day</p>
+                      <a href="#form">
+                        <button class="btn btn-info btn-lg" type="button"  onclick="showForm()">
+                        Hire Me!
+                      </button>
+                    </a>
+                </div>
+<!-- ford galaxy div ends here  -->
+
+</div>
+<!-- end of car rental div  -->
+
+        <hr>
+
+<!-- Team content div href to here -->
+        <div id="team" class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Meet our Rental Team! </h1>
+            </div>
+        </div>
+
+
+    <!-- first team member div  -->
+        <div class="row">
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="images/team.jpg" alt="">
+                </a>
+                <h3>
+                    <a href="#">Joe</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+
+            </div>
+  <!-- end of first team member div  -->
+              <!-- second team member div  -->
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="images/team.jpg" alt="">
+                </a>
+                <h3>
+                    <a href="#">Joe Blog</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <!-- end of second team member div  -->
+
+            <!-- third team member div  -->
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="images/team.jpg" alt="">
+                </a>
+                <h3>
+                    <a href="#">Joe Blogs</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <!-- third team member div  -->
+        </div>
+<!-- end of team content  -->
+        <hr>
+<!-- start of form -->
+
+      	<div style="display: none" id="form_container">
+
+
+      		<form id="form_17526" class="appnitro"  method="post" action="">
+      					<div class="form_description">
+      			<h2 id="form">Rental Form</h2>
+
+      		</div>
+      			<ul >
+
+      					<li id="li_1" >
+      		<label class="description" for="element_1">Name </label>
+      		<span>
+      			<input id="element_1_1" name= "element_1_1" class="element text" maxlength="255" size="8" value=""/>
+      			<label>First</label>
+      		</span>
+      		<span>
+      			<input id="element_1_2" name= "element_1_2" class="element text" maxlength="255" size="14" value=""/>
+      			<label>Last</label>
+      		</span>
+      		</li>		<li id="li_2" >
+      		<label class="description" for="element_2">Address </label>
+
+      		<div>
+      			<input id="element_2_1" name="element_2_1" class="element text large" value="" type="text">
+      			<label for="element_2_1">Street Address</label>
+      		</div>
+
+      		<div>
+      			<input id="element_2_2" name="element_2_2" class="element text large" value="" type="text">
+      			<label for="element_2_2">Address Line 2</label>
+      		</div>
+
+      		<div class="left">
+      			<input id="element_2_3" name="element_2_3" class="element text medium" value="" type="text">
+      			<label for="element_2_3">City</label>
+      		</div>
+
+      		<div class="right">
+      			<input id="element_2_4" name="element_2_4" class="element text medium" value="" type="text">
+      			<label for="element_2_4">State / Province / Region</label>
+      		</div>
+
+      		<div class="left">
+      			<input id="element_2_5" name="element_2_5" class="element text medium" maxlength="15" value="" type="text">
+      			<label for="element_2_5">Postal / Zip Code</label>
+      		</div>
+
+      		<div class="right">
+      			<select class="element select medium" id="element_2_6" name="element_2_6">
+      			<option value="" selected="selected"></option>
+
+
+      			</select>
+      		<label for="element_2_6">Country</label>
+      	</div>
+      		</li>		<li id="li_5" >
+      		<label class="description" for="element_5">Which car to rent. </label>
+      		<div>
+      		<select class="element select medium" id="element_5" name="element_5">
+      			<option value="" selected="selected"></option>
+      <option value="1" >First option</option>
+      <option value="2" >Second option</option>
+      <option value="3" >Third option</option>
+
+      		</select>
+      		</div>
+      		</li>		<li id="li_3" >
+      		<label class="description" for="element_3">When will rental start </label>
+      		<span>
+      			<input id="element_3_1" name="element_3_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+      			<label for="element_3_1">MM</label>
+      		</span>
+      		<span>
+      			<input id="element_3_2" name="element_3_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+      			<label for="element_3_2">DD</label>
+      		</span>
+      		<span>
+      	 		<input id="element_3_3" name="element_3_3" class="element text" size="4" maxlength="4" value="" type="text">
+      			<label for="element_3_3">YYYY</label>
+      		</span>
+
+      		<span id="calendar_3">
+      			<img id="cal_img_3" class="datepicker" src="form/calendar.gif" alt="Pick a date.">
+      		</span>
+      		<script type="text/javascript">
+      			Calendar.setup({
+      			inputField	 : "element_3_3",
+      			baseField    : "element_3",
+      			displayArea  : "calendar_3",
+      			button		 : "cal_img_3",
+      			ifFormat	 : "%B %e, %Y",
+      			onSelect	 : selectDate
+      			});
+      		</script>
+
+      		</li>		<li id="li_4" >
+      		<label class="description" for="element_4">When will rental end </label>
+      		<span>
+      			<input id="element_4_1" name="element_4_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+      			<label for="element_4_1">MM</label>
+      		</span>
+      		<span>
+      			<input id="element_4_2" name="element_4_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+      			<label for="element_4_2">DD</label>
+      		</span>
+      		<span>
+      	 		<input id="element_4_3" name="element_4_3" class="element text" size="4" maxlength="4" value="" type="text">
+      			<label for="element_4_3">YYYY</label>
+      		</span>
+
+      		<span id="calendar_4">
+      			<img id="cal_img_4" class="datepicker" src="form/calendar.gif" alt="Pick a date.">
+      		</span>
+      		<script type="text/javascript">
+      			Calendar.setup({
+      			inputField	 : "element_4_3",
+      			baseField    : "element_4",
+      			displayArea  : "calendar_4",
+      			button		 : "cal_img_4",
+      			ifFormat	 : "%B %e, %Y",
+      			onSelect	 : selectDate
+      			});
+      		</script>
+
+      		</li>		<li id="li_8" >
+      		<label class="description" for="element_8">Which member of our team referred you </label>
+      		<div>
+      		<select class="element select medium" id="element_8" name="element_8">
+      			<option value="" selected="selected"></option>
+      <option value="1" >First option</option>
+      <option value="2" >Second option</option>
+      <option value="3" >Third option</option>
+
+      		</select>
+      		</div>
+      		</li>		<li class="section_break">
+      			<h3></h3>
+      			<p></p>
+      		</li>		<li id="li_6" >
+      		<label class="description" for="element_6">Rental will cost </label>
+      		<span class="symbol">$</span>
+      		<span>
+      			<input id="element_6_1" name="element_6_1" class="element text currency" size="10" value="" type="text" /> .
+      			<label for="element_6_1">Dollars</label>
+      		</span>
+      		<span>
+      			<input id="element_6_2" name="element_6_2" class="element text" size="2" maxlength="2" value="" type="text" />
+      			<label for="element_6_2">Cents</label>
+      		</span>
+
+      		</li>
+
+      					<li class="buttons">
+      			    <input type="hidden" name="form_id" value="17526" />
+
+      				<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+      		</li>
+      			</ul>
+      		</form>
+      		<div id="footer">
+
+      		</div>
+      	</div>
+
+        <!-- end of form -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
