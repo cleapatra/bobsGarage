@@ -1,0 +1,116 @@
+<html>
+<head>
+    <title>Bobs Garage</title>
+    <link rel="stylesheet" href="css/banner.css">
+  
+     <link rel="stylesheet" href="css/images.css">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+<script src="js/hire.js"></script>
+    
+    <script>
+    
+
+     
+       
+    $(document).ready(function(){
+    $("#show").click(function(){
+    $(".contactform_container").hide();
+     $(".thankyou").show();
+    
+});
+
+    
+ 
+    
+});
+    
+    
+    </script>
+    </head>
+<body>
+    
+    
+    
+     <ul class="topnav" id="myTopnav">
+         <li><a href="home.html">Home</a></li> 
+  <li><a href="hire.html">Hire a Car</a></li>
+ <li><a href="contactUs.html">Contact Us</a></li>
+
+ 
+</ul>
+    
+        <div id="logobannercontact">
+                <img src="images/logo2.png" alt="bob's garage logo" width="400px" class="headerLogo"/>
+
+
+
+            </div>
+
+
+        
+        
+        <div id="container">
+            
+                   
+
+            
+            
+     <div class="contactform_container">
+         <h2 id="contactusTitle">Contact Bob's Garage</h2>
+<h3 id="contactusTitle">We'll be happy to answer all your questions!   </h3>
+            <form id="ContactForm" onsubmit="thanks();">
+   <br>
+<input type='text' value="Name" name='name' id='name' /><br/>
+
+<input type='text' value="Email" name='email' id='email' /><br/>
+ <input type='text'value="Subject" name='subject' id='subject' /><br/>
+
+ 
+                <h4> Type Your Message Below!</h4>
+              
+  <textarea name='message' value="Message" id='message'></textarea><br/>
+
+
+                
+              
+</form>
+          <button id="show" class='showform'> Submit</button> 
+       </div> 
+             <div class="thankyou" style="display:none"><h3>Thanks for contacting us! We will be in touch shortly.</h3></div>
+           
+            
+       
+     <div id="map">
+    <script>
+      function initMap() {
+        var uluru = {lat: 54.687254, lng: -5.882736};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru
+            
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZaXZapA5Ik_ePNNy47rVxv7A6IoVBZHw&callback=initMap">
+    </script>
+    
+    
+    </div>
+    
+    
+  
+     
+    
+    </div>
+    
+    </body>
+</html>

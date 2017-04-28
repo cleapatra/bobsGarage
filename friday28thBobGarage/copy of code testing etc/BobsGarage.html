@@ -1,0 +1,371 @@
+
+<!-- saved from url=(0092)https://scm.ulster.ac.uk/~b00686404/workspace/com311/semester2/bob'sgarage/bobs.html#AboutUs -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Bobs Garage</title>
+    <link rel="stylesheet" href="./BobsGarage_files/banner.css">
+    
+    
+    
+<script src="./BobsGarage_files/jquery.min.js"></script>
+    <script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+        
+  function showForm() {
+    document.getElementById("form_container").style.display = "block";
+};
+
+$(document).ready(function(){
+$("#showall").click(function(){
+  $(".carrental").find("div").fadeOut("fast");
+    $(".carrental").find("div").slideDown("slow");
+      });
+  });
+
+
+
+
+$(document).ready(function(){
+$("#search").click(function(){
+    $(".carrental").find("div").fadeOut("fast");
+      var txt = "." + $('#search-criteria').val().toLowerCase();
+        $(".carrental").find(txt).slideDown("slow");
+});
+
+$('#search-criteria').keypress(function(e){
+      if(e.which == 13){//Enter key pressed
+          $('#search').click();//Trigger search button click event
+      }
+  });
+});
+
+$(document).ready(function(){
+$("#searchSmall").click(function(){
+  $(".carrental").find("div").fadeOut("fast");
+    $(".carrental").find(".small").slideDown("slow");
+});
+});
+
+
+$(document).ready(function(){
+$("#searchMedium").click(function(){
+$(".carrental").find("div").fadeOut("fast");
+  $(".carrental").find(".medium").slideDown("slow");
+});
+});
+
+
+$(document).ready(function(){
+$("#searchLarge").click(function(){
+$(".carrental").find("div").fadeOut("fast");
+  $(".carrental").find(".large").slideDown("slow");
+});
+});
+
+$(document).ready(function(){
+$("#red").click(function(){
+$(".carrental").find("div").fadeOut("fast");
+  $(".carrental").find(".red").slideDown("slow");
+});
+});
+
+$(document).ready(function(){
+$("#blue").click(function(){
+$(".carrental").find("div").fadeOut("fast");
+  $(".carrental").find(".blue").slideDown("slow");
+});
+});
+
+$(document).ready(function(){
+$("#white").click(function(){
+$(".carrental").find("div").fadeOut("fast");
+  $(".carrental").find(".white").slideDown("slow");
+});
+});
+
+$(document).ready(function(){
+$("#grey").click(function(){
+$(".carrental").find("div").fadeOut("Fast");
+  $(".carrental").find(".grey").slideDown("slow");
+});
+});      
+        
+        
+        
+        
+        
+</script>
+    </head>
+<body>
+    
+    
+    
+     <ul class="topnav" id="myTopnav">
+        
+ 
+  <li><a href="https://scm.ulster.ac.uk/~b00686404/workspace/com311/semester2/bob&#39;sgarage/hire.html">Hire</a></li>
+  <li><a href="https://scm.ulster.ac.uk/~b00686404/workspace/com311/semester2/bob&#39;sgarage/bobs.html#AboutUs">About Us </a></li>
+  <li><a href="https://scm.ulster.ac.uk/~b00686404/workspace/com311/semester2/bob&#39;sgarage/bobs.html#Content3">Contact Us</a></li>
+
+ 
+</ul>
+    
+    
+    
+    
+
+        
+        <div class="animation-container">
+
+<div class="mySlides fade" style="display: none;">
+  <div class="numbertext"></div>
+  <img src="./BobsGarage_files/car1.jpg">
+
+</div>
+
+<div class="mySlides fade" style="display: block;">
+  <div class="numbertext"></div>
+  <img src="./BobsGarage_files/car2.jpg">
+
+</div>
+
+<div class="mySlides fade" style="display: none;">
+  <div class="numbertext"></div>
+  <img src="./BobsGarage_files/car4.jpg">
+  
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot active"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+</script>
+        <div id="container">
+            
+            
+            
+<div>
+      <h2 style=" color:#578c9d">Search for your rental car!</h2>
+
+    <input type="text" id="search-criteria" class="form-control input-lg" placeholder="">
+<span>
+    <button id="search" value="search" type="button"> Search</button>
+    </span>
+            
+          
+
+
+
+            <h2 style="color:#eb5f4e">Search by car type</h2>
+            <button id="searchSmall" type="button">
+            Small
+          </button>
+          <button id="searchMedium" type="button">
+          Medium
+        </button>
+        <button id="searchLarge" type="button">
+        Large
+      </button>
+  
+    
+
+            <h2 style="color:#eb5f4e">Search by colour</h2>
+<button id="red" type="button" style="background-color:Red"> &nbsp;  </button> &nbsp;
+  <button id="blue" type="button" style="background-color:Blue"> &nbsp; </button>&nbsp;
+  <button id="white" type="button" style="background-color:white"> &nbsp; </button>&nbsp;
+  <button id="grey" type="button" style="background-color:grey"> &nbsp; </button><table>
+  
+</table>
+
+
+
+<h2 style="color:#eb5f4e">&nbsp; </h2>
+<button id="showall" type="button">
+Show all cars
+</button>
+        </div>
+    
+            
+            <div id="main1">
+            
+            <div id="ImageArrange">
+                
+                
+                
+              <!--- RENAULT ORANGE -->  
+                
+<div class="floating-box">
+    <img id="carImg" src="./BobsGarage_files/reanultcapturorange.jpeg"><p>Renault Capture</p>                    <div id="myModal" class="modal">
+                    
+                    <span class="close" onclick="document.getElementById(&#39;myModal&#39;).style.display.&#39;none&#39;"> × </span>
+                        
+                        <img class="model-content" id="carImg01">
+                        <div id="caption"></div>
+
+                    </div>
+                </div>
+                
+                
+                <!--END OF RENAULT ORRANGE-->
+                
+                <!--BEGINNING OF RENAULT BLUE-->
+                <div class="floating-box"><img id="carImg" src="./BobsGarage_files/renualt.jpg" alt="Renault Captur: &lt;/br&gt; 5 Doors &lt;br&gt; Metallic Blue &lt;br&gt; 1.4 Engine &lt;br&gt; holds 5 People&lt;br&gt;"><p>Renault Capture</p>
+                    
+                    
+                    <div id="myModal" class="modal">
+                    
+                    <span class="close" onclick="document.getElementById(&#39;myModal&#39;).style.display.&#39;none&#39;"> × </span>
+                        
+                        <img class="model-content" id="carImg01">
+                        <div id="caption"></div>
+
+                    </div>
+                   
+
+                    
+                   </div>
+                <!--END OF RENAULT BLUE-->
+                
+                <!-- BEGINNING OF REANULT CLIO RED-->
+                <div class="floating-box"><img id="carImg" src="./BobsGarage_files/renaultcliored.jpg"><p>Renault Clio</p>
+                                    <div id="myModal" class="modal">
+                    
+                    <span class="close" onclick="document.getElementById(&#39;myModal&#39;).style.display.&#39;none&#39;"> × </span>
+                        
+                        <img class="model-content" id="carImg01">
+                        <div id="caption"></div>
+
+                    </div>
+                </div>
+                
+                <!--END OF RENAULT CLIO RED-->
+                
+                <!-- BEGINNING OF RENAULT CLIO BLUE-->
+                <div class="floating-box"><img id="carImg" src="./BobsGarage_files/renaultclioblue.jpg"><p>Renault Clio</p>
+                                    <div id="myModal" class="modal">
+                    
+                    <span class="close" onclick="document.getElementById(&#39;myModal&#39;).style.display.&#39;none&#39;"> × </span>
+                        
+                        <img class="model-content" id="carImg01">
+                        <div id="caption"></div>
+
+                    </div>
+                
+                </div>
+                <!--END OF RENAULT CLIO BLUE-->
+                <!-- BEGINNING OF SEAT LEON BLUE-->
+                
+                <div class="floating-box"><img id="carImg" src="./BobsGarage_files/seatleonblue.jpg"><p>Seat Leon</p>                    <div id="myModal" class="modal">
+                    
+                    <span class="close" onclick="document.getElementById(&#39;myModal&#39;).style.display.&#39;none&#39;"> × </span>
+                        
+                        <img class="model-content" id="carImg01">
+                        <div id="caption"></div>
+
+                    </div></div>
+                
+                
+                <!--END OF SEAT LEON BLUE-->
+                <!-- BEGINNING OF SEAT IBIZA ORANGE-->
+                
+                <div class="floating-box"><img id="carImg" src="./BobsGarage_files/seatibizaorange.jpg"><p>Seat Ibiza</p>
+                  <div id="myModal" class="modal">
+                    
+                    <span class="close" onclick="document.getElementById(&#39;myModal&#39;).style.display.&#39;none&#39;"> × </span>
+                        
+                        <img class="model-content" id="carImg01">
+                        <div id="caption"></div>
+
+                    </div>
+                </div>
+<!--END OF SEAT IBIZA ORANGE-->
+
+                </div>
+            </div>
+            
+            <div id="main2">
+            
+            <div id="AboutUs">
+            
+            
+                   <div class="Aboutimg"><img src="./BobsGarage_files/saleslady.jpg"><p>Claire</p></div>
+                   <div class="Aboutimg"><img src="./BobsGarage_files/saleslady.jpg"><p>Chelly</p></div>
+                   <div class="Aboutimg"><img src="./BobsGarage_files/saleslady.jpg"><p>Tracy</p></div>
+                
+                
+            </div>
+            </div>
+                                                    <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('carImg');
+var modalImg = document.getElementById("carImg01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+    
+    </div>
+    
+    
+</body></html>
