@@ -3,384 +3,53 @@
     <title>Bobs Garage</title>
     <link rel="stylesheet" href="css/banner.css">
     <link rel="stylesheet" href="css/RentalForm.css">
-    
-    
+     <link rel="stylesheet" href="css/images.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
-     <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
-    <script type="text/javascript" language="JavaScript">
-      
-        function validateForename(){
-            var hit = 0;
-           //Forename validation
-            var fn = document.forms["RentalForm"]["forename"].value;
-            if (fn == "") {
-                document.getElementById("fnv").style.display = 'block';
-                hit = 1;
-                //return false;  
-            } else if (fn.length > 29) {
-                document.getElementById("fnv1").style.display = 'block';
-                hit = 1;
-                //return false;
-            } else if (fn.match(/^\d+$/)) {
-                document.getElementById("fnv2").style.display = 'block';
-                hit = 1;
-                //return false;
-            }
-            else{
-                document.getElementById("fnv2").style.display = 'none'; 
-            }
-        }
-            
-            
-        function validateSurname(){
-            var hit = 0;
-           var sn = document.forms["RentalForm"]["surname"].value;
-            if (sn == "") {
-                document.getElementById("snv").style.display = 'block';
-                hit = 1;
-                // return false;  
-            } 
-            else if (sn.length > 29) {
-                document.getElementById("snv1").style.display = 'block';
-                hit = 1;
-                
-            } 
-            
-            else if (sn.match(/^\d+$/)) {
-                document.getElementById("snv2").style.display = 'block';
-                hit = 1;
-            }
-            else {
-                document.getElementById("snv").style.display = 'none';
-                document.getElementById("snv1").style.display = 'none';
-                document.getElementById("snv2").style.display = 'none';
-            }
 
-        }
-            
-            function validatePostcode(){
-                   var hit = 0;
-            //Postcode validation
-            var pc = document.forms["RentalForm"]["postcode"].value;
-            pc = pc.replace(/\s/g, "");
-            var regex = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
-            if (regex.test(pc) != true) {
-                document.getElementById("pc").style.display = 'block';
-                hit = 1;
-            }
-                else{
-                    document.getElementById("pc").style.display = 'none';
-                }
+<script src="js/hire.js"></script>
 
-                
-            }
-        
-            function validateEmail(){
-                   var hit = 0;
-           var emailx = document.forms["RentalForm"]["email"].value;
-    var atpos = emailx.indexOf("@");
-    var dotpos = emailx.lastIndexOf(".");
-    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=emailx.length) {
-         document.getElementById("emailv").style.display = 'block';
-        hit = 1;
-    }
-                else{
-                    document.getElementById("emailv").style.display = 'none';
-                }
-
-                
-            }
-            
-            function validateAge(){
-                var hit = 0;
-                 //Age validation
-            var age = document.forms["RentalForm"]["age"].value;
-            if (age < 17) {
-                document.getElementById("agev").style.display = 'block';
-                hit = 1;
-            }
-            if (isNaN(age)) {
-                document.getElementById("agev2").style.display = 'block';
-                hit = 1;
-            }
-            else if (age > 16){
-                 document.getElementById("agev").style.display = 'none';
-                document.getElementById("agev2").style.display = 'none'; 
-            }
-                
-            }
-            
-
-        function validateForm() 
-        {
-          var hit = 0;
-            
-          //Forename validation
-          var fn = document.forms["RentalForm"]["forename"].value;
-          if (fn == "") 
-          {
-              document.getElementById("fnv").style.display = 'block';
-              hit=1;
-              //return false;  
-          }
-             else if (fn.length > 29) 
-             {
-                 document.getElementById("fnv1").style.display = 'block';
-                  hit=1;
-                //return false;
-             }
-
-            else if (!fn.match(/^[a-z]+$/)) 
-             {
-                 document.getElementById("fnv2").style.display = 'block';
-                  hit=1;
-                //return false;
-             }
-            
-            else if (fn.length < 29) 
-             {
-                 document.getElementById("fnv").style.display = 'none';
-                 document.getElementById("fnv1").style.display = 'none';
-                 document.getElementById("fnv2").style.display = 'none';
-                //return false;
-             }
-            
-            
-             //Surname validation
-            
-            var sn = document.forms["RentalForm"]["surname"].value;
-          if (sn == "") 
-          {
-            document.getElementById("snv").style.display = 'block';
-              hit=1;
-           // return false;  
-          }
-             else if (sn.length > 29) 
-             {
-              document.getElementById("snv1").style.display = 'block';
-               hit=1;
-             }
-             
-             else if (fn.match(/^\d+$/)) 
-             {
-               document.getElementById("snv2").style.display = 'block';
-                 hit=1;
-             }
-            
-             else if (sn.length < 29) 
-             {
-              document.getElementById("snv").style.display = 'none';
-                  document.getElementById("snv1").style.display = 'none';
-                 document.getElementById("snv2").style.display = 'none';
-             }
-
-            //Postcode validation
-            var pc = document.forms["RentalForm"]["postcode"].value;
-            pc = pc.replace(/\s/g, "");
-            var regex = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
-            if (regex.test(pc) != true)
-                {
-                   document.getElementById("pc").style.display = 'block';
-                    hit = 1;
-                }
-            else if (regex.test(pc) != false)
-                {
-                   document.getElementById("pc").style.display = 'none';
-                }
-            
-            //Age validation
-            var age = document.forms["RentalForm"]["age"].value;
-            if(age <17)
-            {
-                document.getElementById("agev").style.display = 'block';
-                hit = 1;
-            }
-            if (isNaN(age)) 
-             {
-                document.getElementById("agev2").style.display = 'block';
-                hit = 1;
-             }
-            else if(age <17)
-            {
-                document.getElementById("agev").style.display = 'none';
-            }
-            
-            //email validation
-           var emailx = document.forms["RentalForm"]["email"].value;
-    var atpos = emailx.indexOf("@");
-    var dotpos = emailx.lastIndexOf(".");
-    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=emailx.length) {
-         document.getElementById("emailv").style.display = 'block';
-    }
-             else if (atpos>1 || dotpos>atpos+2 || dotpos+2<x.length) {
-         document.getElementById("emailv").style.display = 'none';
-    }
-           
-            
-            
-            if (hit == 1) 
-                 {
-                     return false;
-                 }
-}
-         
-    </script>
-    
-  <script>
- 
-
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
-
-    <script>
-  function showForm() {
-    document.getElementById("form_container").style.display = "block";
-};
-
-$(document).ready(function(){
-$("#showall").click(function(){
-  $(".carrental").find("div").fadeOut("fast");
-    $(".carrental").find("div").slideDown("slow");
-      });
-  });
-
-
-
-
-$(document).ready(function(){
-$("#search").click(function(){
-    $(".carrental").find("div").fadeOut("fast");
-      var txt = "." + $('#search-criteria').val().toLowerCase();
-        $(".carrental").find(txt).slideDown("slow");
-});
-
-$('#search-criteria').keypress(function(e){
-      if(e.which == 13){//Enter key pressed
-          $('#search').click();//Trigger search button click event
-      }
-  });
-});
-
-$(document).ready(function(){
-$("#searchSmall").click(function(){
-  $(".carrental").find("div").fadeOut("fast");
-    $(".carrental").find(".small").slideDown("slow");
-});
-});
-
-
-$(document).ready(function(){
-$("#searchMedium").click(function(){
-$(".carrental").find("div").fadeOut("fast");
-  $(".carrental").find(".medium").slideDown("slow");
-});
-});
-
-
-$(document).ready(function(){
-$("#searchLarge").click(function(){
-$(".carrental").find("div").fadeOut("fast");
-  $(".carrental").find(".large").slideDown("slow");
-});
-});
-
-$(document).ready(function(){
-$("#red").click(function(){
-$(".carrental").find("div").fadeOut("fast");
-  $(".carrental").find(".red").slideDown("slow");
-});
-});
-
-$(document).ready(function(){
-$("#blue").click(function(){
-$(".carrental").find("div").fadeOut("fast");
-  $(".carrental").find(".blue").slideDown("slow");
-});
-});
-
-$(document).ready(function(){
-$("#white").click(function(){
-$(".carrental").find("div").fadeOut("fast");
-  $(".carrental").find(".white").slideDown("slow");
-});
-});
-
-$(document).ready(function(){
-$("#grey").click(function(){
-$(".carrental").find("div").fadeOut("Fast");
-  $(".carrental").find(".grey").slideDown("slow");
-});
-});      
-        
-        
-        
-        
-        
-</script>
     </head>
 <body>
-    
-    
-    
-     <ul class="topnav" id="myTopnav">
-        
- 
-  <li><a href="home.html">Home</a></li>
-  <li><a href="#AboutUs">About Us </a></li>
-  <li><a href="#Content3">Contact Us</a></li>
+    <ul class="topnav" id="myTopnav">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#AboutUs">About Us </a></li>
+        <li><a href="hire.html">Hire a Car</a></li>
+        <li><a href="#Content3">Contact Us</a></li>
+    </ul>
 
- 
-</ul>
-    
-    
-    
 
-        <div id="container">
-            
-            
-            
-<div >
-      <h2 style=" color:#578c9d">Search for your rental car!</h2>
+<div id="container">
+            <div id="logobanner">
+                <img src="images/logo2.png" alt="bob's garage logo" width="400px"/>
+
+
+
+            </div>
+
+            <div id="main1">
+<div id="searchbox">
+<h2>Search for your rental car!</h2>
 
     <input type="text" id="search-criteria" class="form-control input-lg" placeholder="" />
 <span>
-    <button id="search" value = "search" type="button"> Search</button>
+    <button id="search" value = "search" type="button"> <i class="fa fa-search" aria-hidden="true"></i></button>
     </span>
-            
-          
+        </div>
 
+<ul class="caroptions">
 
+    <li> <h3>Search by car type</h3></li>
+    <li>  <h3>Search by colour</h3></li>
+    <li>&nbsp;</li>
 
-            <h2 style="color:#eb5f4e" >Search by car type</h2>
-            <button id="searchSmall" type="button">
+    </ul>
+
+    <ul class="caroptions">
+
+    <li>    <button id="searchSmall" type="button">
             Small
           </button>
           <button id="searchMedium" type="button">
@@ -389,130 +58,154 @@ $(".carrental").find("div").fadeOut("Fast");
         <button id="searchLarge" type="button">
         Large
       </button>
-  
-    
 
-            <h2 style="color:#eb5f4e">Search by colour</h2>
-<table>
+
+        </li>
+    <li>
   <button id="red" type="button" style="background-color:Red"> &nbsp;  </button> &nbsp;
+ <button id="orange" type="button" style="background-color:orange"> &nbsp;  </button> &nbsp;
   <button id="blue" type="button" style="background-color:Blue"> &nbsp; </button>&nbsp;
   <button id="white" type="button" style="background-color:white"> &nbsp; </button>&nbsp;
-  <button id="grey" type="button" style="background-color:grey"> &nbsp; </button>
-</table>
-
-
-
-<h2 style="color:#eb5f4e" >&nbsp; </h2>
-<button id="showall" type="button">
+  <button id="grey" type="button" style="background-color:grey"> &nbsp; </button></li>
+    <li><button id="showall" type="button">
 Show all cars
-</button>
-        </div>
-    
-            
-            <div id="main1">
-            
+</button></li>
+
+    </ul>
+
+
+
+
+
             <div id="ImageArrange">
-                
+
                 <div class="carrental">
-                
-              <!--- RENAULT ORANGE -->  
-                
-<div class="floating-box renault captur orange medium 5">
-    <img id="carImg" src="reanultcapturorange.jpeg"><p>Renault Capture</p>                    <div id="myModal" class="modal">
-                    
-                    <span class="close" onclick="document.getElementById('myModal').style.display.'none'"> &times; </span>
-                        
-                        <img class="model-content" id="carImg01">
-                        <div id="caption"></div>
+                    <ul id="imageslist">
+
+              <!--beginning of the car images on home.html-->
+                <!--beginning renault captur orange-->
+
+<li><div class="renault captur orange large 5 all">
+    <img id="carImg6" src="images/reanultcapturorange.jpeg" alt="Renault Captur: </br> 5 Doors <br> Metallic Orange <br> 1.4 Engine <br> holds 5 People<br><a href= &#34;#form &#34;> <button onclick=&#34;capturOrangeBtn()&#34;> Hire</button></a>">
+
+             <div id="myModal6" class="modal6">
+
+                    <span class="close6" onclick="document.getElementById('myModal6').style.display.'none'"> &times; </span>
+
+                        <img class="model-content6" id="carImg06">
+                        <div id="caption6" class="renault captur orange large 5 all"> Renault Captur</div>
 
                     </div>
+                    <a href="#form">
+               <button class='showform' onclick="capturOrangeBtn()"> Hire</button> </a>
                 </div>
-                
-                
-                <!--END OF RENAULT ORRANGE-->
-                
-                <!--BEGINNING OF RENAULT BLUE-->
-                <div class="floating-box renault blue captur 5"><img id="carImg" src="renualt.jpg" alt="Renault Captur: </br> 5 Doors <br> Metallic Blue <br> 1.4 Engine <br> holds 5 People<br>"><p>Renault Capture</p>
-                    
-                    
+            </li>
+
+                      <!--END renault captur orange-->
+                    <!--beginning renault captur blue-->
+              <li>  <div class="renault blue captur large 5 all"><img id="carImg" src="images/renualt.jpg" alt="Renault Captur: </br> 5 Doors <br> Metallic Blue <br> 1.4 Engine <br> holds 5 People<br><a href= &#34;#form &#34;> <button onclick=&#34;capturBlueBtn()&#34;> Hire</button></a>">
+
+
                     <div id="myModal" class="modal">
-                    
+
                     <span class="close" onclick="document.getElementById('myModal').style.display.'none'"> &times; </span>
-                        
+
                         <img class="model-content" id="carImg01">
-                        <div id="caption"></div>
+                        <div id="caption" class="renault blue captur large 5 all"> Renault</div>
 
                     </div>
-                   
+<a href="#form">
+                    <button onclick="capturBlueBtn()"> Hire</button>
+</a>
 
-                    
                    </div>
-                <!--END OF RENAULT BLUE-->
-                
-                <!-- BEGINNING OF REANULT CLIO RED-->
-                <div class="floating-box renault red clio 5 "><img id="carImg" src="renaultcliored.jpg"><p>Renault Clio</p>
-                                    <div id="myModal" class="modal">
-                    
-                    <span class="close" onclick="document.getElementById('myModal').style.display.'none'"> &times; </span>
-                        
-                        <img class="model-content" id="carImg01">
-                        <div id="caption"></div>
+
+                        </li>
+                 <!--END renault captur blue-->
+                 <!--beginning renault clio red-->
+
+              <li> <div class="renault red clio small 5 all "><img id="carImg2" src="images/renaultcliored.jpg" alt="Renault Clio: </br> 3 Door </br> Red </br>1.2 Engine </br> Holds 5 people.<br><a href= &#34;#form &#34;> <button onclick=&#34;clioRedBtn()&#34;> Hire</button></a>">
+
+
+                      <div id="myModal2" class="modal2">
+
+                    <span class="close2" onclick="document.getElementById('myModal2').style.display.'none'"> &times; </span>
+
+                        <img class="model-content2" id="carImg02">
+                        <div id="caption2" class="renault red clio small 5 all"> Renault Clio</div>
 
                     </div>
+                    <a href="#form">
+                <button onclick="clioRedBtn()" class='showform'> Hire</button>
+              </a>
                 </div>
-                
-                <!--END OF RENAULT CLIO RED-->
-                
-                <!-- BEGINNING OF RENAULT CLIO BLUE-->
-                <div class="floating-box renault clio blue 5"><img id="carImg" src="renaultclioblue.jpg"><p>Renault Clio</p>
-                                    <div id="myModal" class="modal">
-                    
-                    <span class="close" onclick="document.getElementById('myModal').style.display.'none'"> &times; </span>
-                        
-                        <img class="model-content" id="carImg01">
-                        <div id="caption"></div>
+                </li>
+                <!--END renault clio red-->
+                  <!--beginning renault clio blue-->
+
+              <li> <div class="renault clio blue small 5 all"><img id="carImg3" src="images/renaultclioblue.jpg" alt="Renault Clio: </br> 3 Door </br> Blue </br>1.0 Engine </br> Holds 5 people.<br><a href= &#34;#form &#34;> <button onclick=&#34;clioBlueBtn()&#34;> Hire</button></a>">
+
+                         <div id="myModal3" class="modal3">
+
+                    <span class="close3" onclick="document.getElementById('myModal3').style.display.'none'"> &times; </span>
+
+                        <img class="model-content3" id="carImg03">
+                        <div id="caption3" class="renault blue clio small 5 all"> Renault Clio</div>
 
                     </div>
-                
+                    <a href="#form">
+                <button onclick="clioBlueBtn()" class='showform'> Hire</button>
+              </a>
                 </div>
-                <!--END OF RENAULT CLIO BLUE-->
-                <!-- BEGINNING OF SEAT LEON BLUE-->
-                
-                <div class="floating-box seat leon small blue 5"><img id="carImg" src="seatleonblue.jpg"><p>Seat Leon</p>                    <div id="myModal" class="modal">
-                    
-                    <span class="close" onclick="document.getElementById('myModal').style.display.'none'"> &times; </span>
-                        
-                        <img class="model-content" id="carImg01">
-                        <div id="caption"></div>
+                        </li>
+                <!--END renault clio blue-->
 
-                    </div></div>
-                
-                
-                <!--END OF SEAT LEON BLUE-->
-                <!-- BEGINNING OF SEAT IBIZA ORANGE-->
-                
-                <div class="floating-box seat small ibiza 5 red"><img ID="carImg" src="seatibizaorange.jpg"><p>Seat Ibiza</p>
-                  <div id="myModal" class="modal">
-                    
-                    <span class="close" onclick="document.getElementById('myModal').style.display.'none'"> &times; </span>
-                        
-                        <img class="model-content" id="carImg01">
-                        <div id="caption"></div>
+                  <!--beginning seat leon blue-->
+               <li> <div class="seat leon medium blue 5 all"><img id="carImg4" src="images/seatleonblue.jpg" alt="Seat Ibiza: </br> 3 Door </br> Blue </br>1.2 Engine </br> Holds 5 people.<br><a href= &#34;#form &#34;> <button onclick=&#34;leonBlueBtn()&#34;> Hire</button></a>">
+
+                         <div id="myModal4" class="modal4">
+
+                    <span class="close4" onclick="document.getElementById('myModal4').style.display.'none'"> &times; </span>
+
+                        <img class="model-content4" id="carImg04">
+                        <div id="caption4" class="seat leon medium blue 5 all"> Seat </div>
 
                     </div>
+                    <a href="#form">
+                <button onclick="leonBlueBtn()" class='showform'> Hire</button>
+              </a>
                 </div>
-<!--END OF SEAT IBIZA ORANGE-->
+                        </li>
+                 <!--END seat leon blue-->
+                 <!--beginning seat leon red-->
+             <li>   <div class="seat medium ibiza 5 red all"><img id="carImg5" src="images/seatibizaorange.jpg" alt="Seat ibiza: </br> 3 Door </br> Red </br>1.4 Engine </br> Holds 5 people.</br><a href= &#34;#form &#34;> <button onclick=&#34;ibizaRedBtn()&#34;> Hire</button></a>">
+                      <div id="myModal5" class="modal5">
+
+                    <span class="close5" onclick="document.getElementById('myModal5').style.display.'none'"> &times; </span>
+
+                        <img class="model-content5" id="carImg05">
+                        <div id="caption5" class="seat medium ibiza 5 red all"> Seat </div>
+
+                    </div>
+                    <a href="#form">
+                <button onclick="ibizaRedBtn()" class='showform'> Hire</button>
+              </a>
                 </div>
+                        </li>
+                   <!--END seat leon red-->
+
                 </div>
-            </div>
-            
+
+                </div>
+                </ul>
+            <hr>
             <div id="main2">
-            
-            <div id="AboutUs">
-            
-            
-                 <h2>Hire Form</h2>
-                <div id="form_container">
+
+            <div id="form_container">
+
+            <div class="centered">
+
+
 
 
         <form name="RentalForm" onsubmit="return validateForm();">
@@ -520,31 +213,31 @@ Show all cars
 
 
 
-            <h3 id="form">Your Details</h3>
+            <h3 id="form">Register</h3>
             <table>
                 <tr>
                     <td>
-                        <label class="description" for="forename">Forename </label>
+                        <label id="forename" class="description" for="forename">Forename </label>
                     </td>
                     <td>
-      			<input id="forename" name= "forename" class="element text" maxlength="255" size="8" value="" onChange="validateForename();"/>
-      			
+      			<input name= "forename" class="element text" maxlength="255" size="8" value="" onChange="validateForename();"/>
+
                         </td><td>
-            
+
                          <input type="text" id="fnv" name="fnv" class="" maxlength="30" size="14" value="Forename must not be blank" style="display: none;" Readonly = "Readonly"/>
-                
-                
-               
+
+
+
                          <input type="text" id="fnv1" name="fnv1" class="" maxlength="30" size="14" value="Forename must be less than 30 characters" style="display: none;" Readonly = "Readonly" width="70px"/>
-               
-                
-                
+
+
+
                          <input type="text" id="fnv2" name="fnv2" class="" maxlength="30" size="14" value="Forename must be characters only" style="display: none;" Readonly = "Readonly" width="70px"/>
 
-                        
-                        
-                        
-                        
+
+
+
+
                     </td>
                 </tr>
                 <tr>
@@ -552,48 +245,56 @@ Show all cars
                         <label>Surname</label>
                     </td>
                     <td> <span>
-      			<input id="element_1_2" name= "surname" class="element text" maxlength="255" size="14" value="" onChange="validateSurname();"/>
-      			
+      			<input id="element_1_2" name= "surname" class="element text" maxlength="255" size="14" value="" onChange="validateSurname();savecookie('namecookie');"/>
+
       		</span>
                     </td>
-                    
+
                     <td>
                      <input type="text" id="snv" name="snv" class="" maxlength="30" size="14" value="Surname must not be blank" style="display: none;" Readonly = "Readonly"/>
-                        
+
                     <input type="text" id="snv1" name="snv2" class="" maxlength="30" size="14" value="Surname must be less than 30 characters" style="display: none;" Readonly = "Readonly"/>
-                        
+
                   <input type="text" id="snv2" name="snv3" class="" maxlength="30" size="14" value="Surname cannot contain numbers" style="display: none;" Readonly = "Readonly"/>
-                  
+
                     </td>
-                    
-                    
+
+
                 </tr>
-                
-                
+
+
                 <tr>
                     <td>
                     <label for="age">Age</label></td>
                     <td><input type="text" id="age" name="age" class="surname" size="14" value="" onChange="validateAge();"/></td>
-                 
+
                 <td>
                     <input type="text" id="agev" name="agev" class="" maxlength="30" size="14" value="You must be at least 17 to rent a car!" style="display: none;" Readonly="Readonly"/>
-                   
-        
+
+
                     <input type="text" id="agev2" name="agev2" class="" maxlength="30" size="14" value="Age must be numbers only" style="display: none;" Readonly="Readonly"/>
-                 
-                    
-                    
-                    
+
+
+
+
                     </td>
                 </tr>
-                
+
                 <tr>
                     <td>
                         <label>Email</label>
                     </td>
-                    <td> 
+                    <td>
       			<input id="element_1_3" name= "email" class="element text" maxlength="255" size="14" onChange="validateEmail();"/></td>
                     <td><input type="text" id="emailv" name="emailv" class="" maxlength="30" size="14" value="Invalid Email Address" style="display: none;" Readonly="Readonly"/></td>
+                </tr>
+
+
+                <tr>
+
+                       <td> <label>Password</label></td>
+
+                    <td><input type="password" name="password"/></td>
                 </tr>
             </table>
             <hr>
@@ -642,28 +343,47 @@ Show all cars
                     <td>
                         <input id="postcode" name="postcode" class="element text medium" maxlength="15" value="" type="text" onChange="validatePostcode();">
                     </td>
-                    
-                    <td>  
+
+                    <td>
                     <input type="text" id="pc" name="pc" class="" maxlength="30" size="14" value="Postcode must be in following format: LLNN NLL" style="display: none;" Readonly="Readonly"/>
                     </td>
 
                 </tr>
             </table>
-            <hr>
+             <hr>
+
+<script src="js/calculator.js"></script>
+
             <h3 id="form">Rental Information</h3>
             <table>
+
+              <tr>
+                  <td>
+                      <label class="description" for="element_8">Which member of our team referred you </label>
+                  </td>
+
+                  <td>
+                      <select class="element select medium" id="teammember" name="teammember" onchange="saveteammembercookie('teammembercookie')">
+                          <option value="Joe">Joe</option>
+                          <option value="Joey">joey</option>
+                          <option value="John">John</option>
+
+                      </select>
+                  </td>
+              </tr>
                 <tr>
                     <td>
                         <label class="description" for="element_5">Your Rental Car </label>
                     </td>
 
                     <td>
-                        <select class="element select medium" id="element_5" name="carselected">
-                            <option value="" selected="selected"></option>
-                            <option value="1">First option</option>
-                            <option value="2">Second option</option>
-                            <option value="3">Third option</option>
-
+                        <select class="element select medium" id="carsdropdown" name="carselected">
+                          <option value="50">Renault Captur Orange</option>
+                          <option value="50">Renault Captur Blue</option>
+                          <option value="25">Renault Clio Red </option>
+                          <option value="25">Renault Clio Blue </option>
+                          <option value="30">Seat Leon Blue </option>
+                          <option value="30">Seat Ibiza Red </option>
                         </select>
                     </td>
                 </tr>
@@ -671,7 +391,7 @@ Show all cars
                     <td>
                         <label class="description" for="element_3">Hire from:</label>
                     </td>
-                    <td><input type="text" id="datepicker" name="hirefrom"><i class="fa fa-calendar" aria-hidden="true"></i>
+                    <td><input type="date" id="from" name="hirefrom" onchange="savehirecookie('hirefromcookie');"><i class="fa fa-calendar" aria-hidden="true"></i>
                     </td>
                 </tr>
                 <tr>
@@ -680,85 +400,63 @@ Show all cars
                         <label class="description" for="element_4">Until: </label>
                     </td>
 
-                    <td><input type="text" id="datepicker" name="hireuntil"><i class="fa fa-calendar" aria-hidden="true"></i>
-                </tr>
-                </td>
-                <tr>
-                    <td>
-                        <label class="description" for="element_8">Which member of our team referred you </label>
-                    </td>
-
-                    <td>
-                        <select class="element select medium" id="element_8" name="element_8">
-                            <option value="" disabled selected>Choose a car</option>
-                            <option value="1">First option</option>
-                            <option value="2">Second option</option>
-                            <option value="3">Third option</option>
-
-                        </select>
+                    <td><input type="date" id="to" name="hireuntil" onchange="rentalCalc()">
+                      <i class="fa fa-calendar" aria-hidden="true" ></i>
                     </td>
                 </tr>
 
-                <tr>
-                    <td>
-                        <label class="description" for="element_6">Rental will cost </label>
-                    </td>
-                    <td><span class="symbol">$</span>
-                        <span>
-      			<input id="element_6_1" name="element_6_1" class="element text currency" size="10" value="" type="text" /> .
-      			<label for="element_6_1">Dollars</label>
-      		</span>
-                        <span>
-      			<input id="element_6_2" name="element_6_2" class="element text" size="2" maxlength="2" value="" type="text"/>
-      			<label for="element_6_2">Cents</label>
-      		</span>
-                    </td>
+                 </table>
+
+</div>
+
+                  </div>
 
 
-                    <tr>
-                        <th>
-                            <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
-                        </th>
-                    </tr>
+            <div id="shoppingcart">
 
-            </table>
 
-        </form>
+                      <table>
 
-    </div>
+                          <tr><th><label class="description"> <h3>Total days:</h3> <label><br>  </th></tr>
+
+                          <tr> <th> <label id ="labelDays" class="description">____<label>  </th></tr>
+
+
+
+
+                      <tr> <th> <br> <label class="description" for="element_6"><h3>Rental will cost</h3> </label><br></th></tr>
+
+
+                      <tr> <th>  <label id ="price" class="description">____<label></th></tr>
+
+
+
+<tr> <th><br><label><h3>Enter promo code to get 20% off!</h3></label><br></th></tr>
+
+ <tr> <th><input type="text" onchange="rentalCalc()" id="promoCode" placeholder="enter promo code here"> <br></th></tr>
+
+
+
+
+                         <tr> <th>   <input id="saveForm" class="button_text" type="submit" name="submit" value="Confirm Rental" /></th></tr>
+
+</table>
+      </form>
+</div>
+
 
     <!-- end of form -->
-                
-                
-            </div>
-                
-              
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('carImg');
-var modalImg = document.getElementById("carImg01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
+        <script src="js/cars.js"></script>
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
+
+
 
     </div>
-            
-            
-    
+
+                </div>
+
+
     </body>
 </html>
