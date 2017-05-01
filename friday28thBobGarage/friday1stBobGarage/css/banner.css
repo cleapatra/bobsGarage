@@ -1,0 +1,602 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+h2 {
+    font-family: sans-serif;
+    color: #EB5F4E;
+    font-size: 35px;
+}
+h3 {
+    font-family: sans-serif;
+    color: #EB5F4E;
+    font-size: 25px;
+}
+#container {
+    width: 100%;
+}
+/* NAVIGATION */
+
+.topnav a::before,
+.topnav a::after {
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s;
+}
+ul.topnav li {
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    width: 150px;
+    font-size: 20px;
+}
+ul.topnav li:hover {
+    background-color: #B1DEEF;
+    transition: all 0.5s ease;
+}
+ul.topnav li a {
+    display: inline-block;
+    color: #578C9D;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+ul.topnav {
+    list-style-type: none;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+#timecurrent {
+    color: #578C9D;
+    text-align: center;
+    font-size: 17px;
+}
+/* ANIMATED BANNER */
+
+.mySlides {
+    display: none
+}
+/* Slideshow container */
+
+.animation-container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+/*img width*/
+
+.animation-container img {
+    width: 100%;
+    height: 100%;
+}
+/* The dots/bullets/indicators */
+
+.dot {
+    height: 13px;
+    width: 13px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active {
+    background-color: #717171;
+}
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+#main1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100;
+    padding: 0;
+    width: 75%;
+}
+#logobanner {
+    height: 500px;
+    background-image: url('../images/backgroundbanner.jpg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.headerLogo {
+    max-width: 400px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.headerLogo2 {
+    max-width: 400px;
+    position: absolute;
+    z-index: 999;
+    padding-top: 50px;
+    margin-left: -200px;
+}
+#bannerlogo {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+#search {
+    background-color: #578C9D;
+    border-radius: 7px;
+    font-size: 18px;
+    width: 50px;
+    height: 40px;
+    border: 0;
+    color: white;
+    cursor: pointer;
+}
+#searchbox {
+    margin: 0 auto;
+    text-align: center;
+}
+#search-criteria {
+    min-width: 1000px;
+    max-width: 70%;
+    margin: 0 auto;
+    height: 40px;
+}
+.caroptions li,
+.caroptionslabel li {
+    list-style-type: none;
+    display: inline-block;
+    width: 30%;
+    overflow: hidden;
+}
+.caroptions,
+.caroptionslabel {
+    min-width: 1000px;
+    max-width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+#red,
+#blue,
+#white,
+#grey,
+#orange {
+    height: 40px;
+    width: 30px;
+    border: 2px lightgrey solid;
+    cursor: pointer;
+}
+#searchSmall,
+#searchMedium,
+#searchLarge,
+#showall,
+.showform {
+    border: 0;
+    color: white;
+    font-size: 17px;
+    background-color: #578C9D;
+    height: 40px;
+    border-radius: 7px;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#searchSmall:hover,
+#searchMedium:hover,
+#searchLarge:hover,
+#showall:hover,
+#search:hover,
+.showform:hover {
+    background-color: #B1DEEF;
+    transition: all 0.5s ease;
+}
+/* CAR SELECTION LIST */
+/* div around car selection list */
+
+.carrental {
+    margin: 0 auto;
+    max-width: 1600px;
+    padding: 30px;
+    text-align: center;
+    min-height: 800px;
+}
+.all {
+    display: inline-block;
+    padding: 0px;
+    overflow: visible;
+    width: 30%;
+}
+/*Start of Hover*/
+
+#carImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#carImg01 {
+    height: 400px;
+    width: 520px;
+}
+#carImg:Hover {
+    opacity: 0.7;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.modal-content {
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+#caption {
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+.modal-content,
+#caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+/* The Close Button */
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* the hire form */
+
+#main2 {
+    display: none;
+    min-height: 900px;
+    margin: 0 auto;
+    min-width: 800px;
+    max-width: 70%;
+}
+.centered {
+    float: left;
+    padding: 15px;
+    width: 70%;
+}
+#shoppingcart {
+    background-color: #B1DEEF;
+    padding: 20px;
+    border-radius: 7px;
+    width: 20%;
+    float: left;
+    margin-top: 100px;
+    font-size: 25px;
+}
+input[type=text],
+input[type=password] {
+    height: 30px;
+    min-width: 100%;
+    /*    max-width:250px;*/
+    
+    font-size: 14px;
+}
+input[type=submit] {
+    text-align: center;
+    margin: 0 auto;
+    width: 200px;
+    margin-top: 30;
+    border: 2px white solid;
+    background-color: #578C9D;
+    color: white;
+    font-size: 16px;
+    padding: 14px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: #B1DEEF;
+    transition: all 0.5s ease;
+}
+table {
+    width: 100%;
+}
+th {
+    text-align: left;
+    font-weight: 500;
+    width: 20%;
+}
+td {
+    width: 35%;
+    height: 40px;
+}
+.required {
+    color: #808184;
+}
+#form_container span {
+    color: red;
+}
+/*Validation Styling*/
+
+#fnv,
+#fnv1,
+#fnv2,
+#snv,
+#snv1,
+#snv2,
+#agev,
+#agev2,
+#emailv,
+#psv,
+#psv1,
+#psv2,
+#adv,
+#pc,
+#agev3 {
+    border: 0px;
+    color: red;
+    font-size: 11px;
+}
+#price,
+#labelDays {
+    font-size: 40px;
+    text-decoration: underline;
+}
+/* ABOUT PAGE */
+
+.Aboutimg {
+    margin-left: 5px;
+    display: inline-block;
+}
+.Aboutimg img {
+    width: 200px;
+    height: 270px;
+}
+.Aboutimg p {
+    text-align: center;
+}
+/*  confirmation page */
+
+#confirmation {
+    margin: 0 auto;
+    width: 700px;
+    font-size: 19px;
+    padding: 20px;
+}
+/*  Home CSS */
+/*******************************Rachel*********************************************/
+
+#AboutUs {
+    background-color: #b1deef;
+    padding-left: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#centerHome {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 400px;
+}
+.Aboutimg {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0 auto;
+    display: inline-block;
+}
+.Aboutimg img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+.Aboutimg p {
+    text-align: center;
+}
+#holly,
+#bio,
+#joe {
+    background-color: white;
+    width: 200px;
+}
+#request,
+#request2,
+#request3 {
+    width: 100%;
+    border: 0;
+    color: white;
+    font-size: 17px;
+    background-color: #578C9D;
+    padding: 10px;
+    height: 40px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+#request:hover,
+#request2:hover,
+#request3:hover {
+    background-color: #B1DEEF;
+    transition: all 0.5s ease;
+}
+#firstlineimages {
+    margin: 0 auto;
+    max-width: 1100px;
+}
+#firstlineimages h2 {
+    text-align: center;
+    margin: 0 auto;
+}
+figure {
+    margin: 0 auto;
+    padding: 55px;
+    display: inline-block;
+    max-width: 250px;
+}
+figure img {
+    width: 250px;
+}
+figcaption {
+    color: #EB5F4E;
+    padding-top: 30px;
+    text-align: center;
+}
+/* Contact us page */
+
+#logobannercontact {
+    height: 500px;
+    background-image: url('../images/contact.jpg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#contactusTitle {
+    text-align: center;
+}
+#ContactForm h4 {
+    color: #EB5F4E;
+}
+#ContactForm {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+#ContactForm textarea {
+    margin: 0 auto;
+    margin: 10px;
+    width: 60%;
+    height: 200px;
+}
+#ContactForm input[type="text"] {
+    margin: 10px;
+}
+.contactform_container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+.thankyou {
+    padding-top: 60px;
+    font-size: 21px;
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    text-align: justify;
+}
+#map {
+    height: 570px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+@media only screen and (max-width: 1060px) {
+    .headerLogo,
+    headerLogo2 {
+        width: 98%;
+    }
+    .modal-content {
+        width: 100%;
+    }
+    .all {
+        width: 100%;
+    }
+    #shoppingcart {
+        clear: both;
+        margin: 0;
+        padding: 10;
+        width: 90%;
+    }
+    .caroptions,
+    #search-criteria {
+        min-width: 90%;
+    }
+    .caroptions li {
+        height: 60px;
+        width: 90%;
+    }
+    .caroptionslabel {
+        display: none;
+    }
+    #main2 {
+        min-width: 100%;
+        margin: 0;
+        padding: 5px;
+    }
+    .centered {
+        min-width: 90%;
+        margin: 0;
+        padding: 0;
+    }
+    table {
+        width: 90%;
+        margin: 0;
+    }
+    td {
+        min-width: 100%;
+    }
+}

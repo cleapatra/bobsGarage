@@ -1,0 +1,548 @@
+<html>
+
+<head>
+    <title>Rental</title>
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/images.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/logo2.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="js/hire.js"></script>
+    <script src="js/time.js"></script>
+    <script src="js/general.js"></script>
+</head>
+
+<body onload="startTime();">
+    <ul class="topnav" id="myTopnav">
+        <li><a href="home.html">Home</a>
+        </li>
+        <li><a href="hire.html">Hire a Car</a>
+        </li>
+        <li><a href="contactUs.html">Contact Us</a>
+        </li>
+        <li>
+            <div id="timecurrent">&nbsp;</div>
+        </li>
+    </ul>
+
+
+    <div id="container">
+
+        <div id="logobanner">
+            <a href="home.html"><img src="images/logo2.png" alt="bob's garage logo" class="headerLogo" />
+            </a>
+        </div>
+
+        <div id="main1">
+            <div id="searchbox">
+                <h2>Search for your rental car!</h2>
+
+                <input type="text" id="search-criteria" class="form-control input-lg" placeholder="Search by colour, no. of seats, car model, make" />
+                <span>
+    <button id="search" value = "search" type="button" > <i class="fa fa-search" aria-hidden="true"></i></button>
+    </span>
+            </div>
+
+            <ul class="caroptionslabel">
+
+                <li>
+                    <h3>Search by car type</h3>
+                </li>
+                <li>
+                    <h3>Search by colour</h3>
+                </li>
+                <li>&nbsp;</li>
+
+            </ul>
+
+            <ul class="caroptions">
+
+                <li>
+                    <button id="searchSmall" type="button">
+                        Small
+                    </button>
+                    <button id="searchMedium" type="button">
+                        Medium
+                    </button>
+                    <button id="searchLarge" type="button">
+                        Large
+                    </button>
+
+
+                </li>
+                <li>
+                    <button id="red" type="button" style="background-color:Red"> &nbsp; </button> &nbsp;
+                    <button id="orange" type="button" style="background-color:orange"> &nbsp; </button> &nbsp;
+                    <button id="blue" type="button" style="background-color:Blue"> &nbsp; </button>&nbsp;
+                    <li>
+                        <button id="showall" type="button">
+                            Show all cars
+                        </button>
+                    </li>
+
+            </ul>
+
+
+
+
+
+            <div class="carrental">
+
+
+
+                <!--beginning of the car images on home.html-->
+                <!--beginning renault captur orange-->
+
+                <div class="renault captur orange large 5 all">
+                    <img id="carImg6" src="images/reanultcapturorange.jpeg" alt="Renault Captur: </br> 5 Doors <br> Metallic Orange <br> 1.4 Engine <br> holds 5 People<br><a href= &#34;#form &#34;> <button class='showform' onclick=&#34;capturOrangeBtn()&#34;> Hire</button></a>"/>
+
+                    <div id="myModal6" class="modal6">
+
+                        <span class="close6" onclick="document.getElementById('myModal6').style.display.'none'"> &times; </span>
+
+                        <img class="model-content6" id="carImg06" alt="renault capture orange car"/>
+                        <div id="caption6" class="renault captur orange large 5 all"> Renault Captur</div>
+
+                    </div>
+                    <a href="#form">
+                        <br>
+                        <button class='showform' onclick="capturOrangeBtn()"> Hire</button>
+                    </a>
+                </div>
+
+
+                <!--END renault captur orange-->
+                <!--beginning renault captur blue-->
+                <div class="renault blue captur large 5 all"><img id="carImg" src="images/renualt.jpg" alt="Renault Captur: </br> 5 Doors <br> Metallic Blue <br> 1.4 Engine <br> holds 5 People<br><a href= &#34;#form &#34;> <button class='showform' onclick=&#34;capturBlueBtn()&#34;> Hire</button></a>"/>
+
+
+                    <div id="myModal" class="modal">
+
+                        <span class="close" onclick="document.getElementById('myModal').style.display.'none'"> &times; </span>
+
+                        <img class="model-content" id="carImg01"/>
+                        <div id="caption" class="renault blue captur large 5 all"> Renault</div>
+
+                    </div>
+                    <a href="#form">
+                        <br>
+                        <button class='showform' onclick="capturBlueBtn()"> Hire</button>
+                    </a>
+
+                </div>
+
+
+                <!--END renault captur blue-->
+                <!--beginning renault clio red-->
+
+                <div class="renault red clio small 5 all "><img id="carImg2" src="images/renaultcliored.jpg" alt="Renault Clio: </br> 3 Door </br> Red </br>1.2 Engine </br> Holds 5 people.<br><a href= &#34;#form &#34;> <button class='showform' onclick=&#34;clioRedBtn()&#34;> Hire</button></a>"/>
+
+
+                    <div id="myModal2" class="modal2">
+
+                        <span class="close2" onclick="document.getElementById('myModal2').style.display.'none'"> &times; </span>
+
+                        <img class="model-content2" id="carImg02"/>
+                        <div id="caption2" class="renault red clio small 5 all"> Renault Clio</div>
+
+                    </div>
+                    <a href="#form">
+                        <br>
+                        <button onclick="clioRedBtn()" class='showform'> Hire</button>
+                    </a>
+                </div>
+
+                <!--END renault clio red-->
+                <!--beginning renault clio blue-->
+
+                <div class="renault clio blue small 5 all"><img id="carImg3" src="images/renaultclioblue.jpg" alt="Renault Clio: </br> 3 Door </br> Blue </br>1.0 Engine </br> Holds 5 people.<br><a href= &#34;#form &#34;> <button class='showform' onclick=&#34;clioBlueBtn()&#34;> Hire</button></a>"/>
+
+                    <div id="myModal3" class="modal3">
+
+                        <span class="close3" onclick="document.getElementById('myModal3').style.display.'none'"> &times; </span>
+
+                        <img class="model-content3" id="carImg03" alt="renault clio car blue"/>
+                        <div id="caption3" class="renault blue clio small 5 all"> Renault Clio</div>
+
+                    </div>
+                    <a href="#form">
+                        <br>
+                        <button onclick="clioBlueBtn()" class='showform'> Hire</button>
+                    </a>
+                </div>
+
+                <!--END renault clio blue-->
+
+                <!--beginning seat leon blue-->
+                <div class="seat leon medium blue 5 all"><img id="carImg4" src="images/seatleonblue.jpg" alt="Seat Ibiza: </br> 3 Door </br> Blue </br>1.2 Engine </br> Holds 5 people.<br><a href= &#34;#form &#34;> <button class='showform' onclick=&#34;leonBlueBtn()&#34;> Hire</button></a>"/>
+
+                    <div id="myModal4" class="modal4">
+
+                        <span class="close4" onclick="document.getElementById('myModal4').style.display.'none'"> &times; </span>
+
+                        <img class="model-content4" id="carImg04" alt="seat leon car blue"/>
+                        <div id="caption4" class="seat leon medium blue 5 all"> Seat </div>
+
+                    </div>
+                    <a href="#form">
+                        <br>
+                        <button onclick="leonBlueBtn()" class='showform'> Hire</button>
+                    </a>
+                </div>
+
+                <!--END seat leon blue-->
+                <!--beginning seat leon red-->
+                <div class="seat medium ibiza 5 red all"><img id="carImg5" src="images/seatibizaorange.jpg" alt="Seat ibiza: </br> 3 Door </br> Red </br>1.4 Engine </br> Holds 5 people.</br><a href= &#34;#form &#34;> <button class='showform' onclick=&#34;ibizaRedBtn()&#34;> Hire</button></a>"/>
+                    <div id="myModal5" class="modal5">
+
+                        <span class="close5" onclick="document.getElementById('myModal5').style.display.'none'"> &times; </span>
+
+                        <img class="model-content5" id="carImg05" alt="seat ibiza car red"/>
+                        <div id="caption5" class="seat medium ibiza 5 red all"> Seat </div>
+
+                    </div>
+                    <a href="#form">
+                        <br>
+                        <button onclick="ibizaRedBtn()" class='showform'> Hire</button>
+                    </a>
+                </div>
+
+                <!--END seat leon red-->
+
+            </div>
+
+            <hr>
+            <div id="main2">
+
+                <!--            <div id="form_container">-->
+
+                <div class="centered">
+
+
+
+
+                    <form name="RentalForm" onsubmit="return validateForm();">
+                        <h2 id="form">Rent a Car</h2>
+
+
+
+                        <h3 id="form">Register</h3>
+                        <p class="required"><span>*</span> indicates required fields</p>
+                        <table>
+                            <tr>
+                                <th>
+                                    <label for="forename">Forename <span>*</span>
+                                        </p>
+                                    </label>
+                                </th>
+                                <td>
+                                    <input type="text" name="forename" maxlength="255" size="8" onChange="validateForename();" />
+
+                                </td>
+                                <td>
+
+                                    <input type="text" id="fnv" name="fnv" maxlength="30" size="14" value="Forename must not be blank" style="display: none;" Readonly="Readonly" />
+
+
+
+                                    <input type="text" id="fnv1" name="fnv1" maxlength="30" size="14" value="Forename must be less than 30 characters" style="display: none;" Readonly="Readonly" width="70px" />
+
+
+
+                                    <input type="text" id="fnv2" name="fnv2" maxlength="30" size="14" value="Forename cannot contain numbers" style="display: none;" Readonly="Readonly" width="70px" />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="surname">Surname <span>*</span>
+                                    </label>
+                                </th>
+                                <td> <span>
+      			<input type="text" name= "surname" maxlength="255" size="14" onChange="validateSurname();savecookie('namecookie');"/>
+
+      		</span>
+                                </td>
+
+                                <td>
+                                    <input type="text" id="snv" name="snv" maxlength="30" size="14" value="Surname must not be blank" style="display: none;" Readonly="Readonly" />
+
+                                    <input type="text" id="snv1" name="snv1" maxlength="30" size="14" value="Surname must be less than 30 characters" style="display: none;" Readonly="Readonly" />
+
+                                    <input type="text" id="snv2" name="snv2" maxlength="30" size="14" value="Surname cannot contain numbers" style="display: none;" Readonly="Readonly" />
+
+                                </td>
+
+
+                            </tr>
+
+
+                            <tr>
+                                <th>
+                                    <label for="age">Age <span>*</span>
+                                    </label>
+                                </th>
+                                <td>
+                                    <input type="text" id="age" name="age" size="14" onChange="validateAge();" />
+                                </td>
+
+                                <td>
+                                    <input type="text" id="agev" name="agev" maxlength="30" size="14" value="You must be at least 17 to rent a car!" style="display: none;" Readonly="Readonly" />
+
+
+                                    <input type="text" id="agev2" name="agev2" maxlength="30" size="14" value="Age must be numbers only" style="display: none;" Readonly="Readonly" />
+
+                                    <input type="text" id="agev3" name="agev3" maxlength="30" size="14" value="Age must not be blank" style="display: none;" Readonly="Readonly" />
+
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label for="email">Email <span>*</span>
+                                    </label>
+                                </th>
+                                <td>
+                                    <input type="text" name="email" maxlength="255" size="24" onChange="validateEmail();" />
+                                </td>
+                                <td>
+                                    <input type="text" id="emailv" name="emailv" maxlength="30" size="14" value="Invalid Email Address" style="display: none;" Readonly="Readonly" />
+                                </td>
+                            </tr>
+
+
+                            <tr>
+
+                                <th>
+                                    <label for="password">Password <span>*</span>
+                                    </label>
+                                </th>
+
+                                <td>
+                                    <input type="password" name="password" onChange="validatePassword();" />
+                                </td>
+
+                                <td>
+                                    <input type="text" id="psv" name="psv" class="" maxlength="30" size="14" value="Password must not be blank" style="display: none;" Readonly="Readonly" />
+
+                                    <input type="text" id="psv1" name="psv1" class="" maxlength="30" size="14" value="Password must be longer than 6 characters" style="display: none;" Readonly="Readonly" />
+
+                                    <input type="text" id="psv2" name="psv2" class="" maxlength="30" size="14" value="Password must contain numbers" style="display: none;" Readonly="Readonly" />
+
+                                </td>
+                            </tr>
+                        </table>
+                        <hr>
+                        <h3 id="form">Billing Address</h3>
+                        <table>
+
+
+
+                            <tr>
+                                <th>
+                                    <label for="address">Address<span>*</span>
+                                    </label>
+                                </th>
+
+                                <td>
+                                    <input name="address" class="element text large" value="" type="text" onChange="validateAddress();">
+                                </td>
+                                <td>
+                                    <input type="text" id="adv" name="adv" class="" maxlength="30" size="14" value="Address must not be blank" style="display: none;" Readonly="Readonly" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>&nbsp;</th>
+                                <td>
+                                    <input name="address2" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="town">Town/City</label>
+                                </th>
+                                <td>
+                                    <input name="town" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="county">County/Region</label>
+                                </th>
+                                <td>
+                                    <input name="county" type="text" />
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="postcode">Postcode<span>*</span>
+                                    </label>
+                                </th>
+                                <td>
+                                    <input id="postcode" name="postcode" maxlength="15" type="text" onChange="validatePostcode();">
+                                </td>
+
+                                <td>
+                                    <input type="text" id="pc" name="pc" maxlength="30" size="14" value="Postcode must be in format: LLNN NLL" style="display: none;" Readonly="Readonly" />
+                                </td>
+
+                            </tr>
+                        </table>
+                        <hr>
+
+                        <script src="js/calculator.js"></script>
+
+                        <h3 id="form">Rental Information</h3>
+                        <table>
+
+                            <tr>
+                                <th>
+                                    <label class="description" for="teammember">Which member of our team referred you </label>
+                                </th>
+
+                                <td>
+                                    <select id="teammember" name="teammember" onchange="saveteammembercookie('teammembercookie')">
+                                        <option value="Claire">Claire</option>
+                                        <option value="Joe">Joe</option>
+                                        <option value="Holly">Holly</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="carselected">Your Rental Car </label>
+                                </th>
+
+                                <td>
+                                    <select id="carsdropdown" name="carselected">
+                                        <option value="50">Renault Captur Orange</option>
+                                        <option value="50">Renault Captur Blue</option>
+                                        <option value="25">Renault Clio Red </option>
+                                        <option value="25">Renault Clio Blue </option>
+                                        <option value="30">Seat Leon Blue </option>
+                                        <option value="30">Seat Ibiza Red </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="hirefrom">Hire from:</label>
+                                </th>
+                                <td>
+                                    <input type="date" id="from" name="hirefrom" onchange="savehirecookie('hirefromcookie');">
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <th>
+                                    <label for="hireuntil">Until: </label>
+                                </th>
+
+                                <td>
+                                    <input type="date" id="to" name="hireuntil" onchange="rentalCalc()">
+
+                                </td>
+                            </tr>
+
+                        </table>
+
+                </div>
+
+                <!--                  </div>-->
+
+
+                <div id="shoppingcart">
+
+
+                    <table>
+
+                        <tr>
+                            <th>
+                                <label class="description">
+                                    <h3>Total days:</h3>
+                                    <label>
+                                        <br> </th>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <label id="labelDays" class="description">____
+                                    <label>
+                            </th>
+                        </tr>
+
+
+
+
+                        <tr>
+                            <th>
+                                <br>
+                                <label class="description">
+                                    <h3>Rental will cost</h3> </label>
+                                <br>
+                            </th>
+                        </tr>
+
+
+                        <tr>
+                            <th>
+                                <label id="price" class="description">____
+                                    <label>
+                            </th>
+                        </tr>
+
+
+
+                        <tr>
+                            <th>
+                                <br>
+                                <label>
+                                    <h3>Enter promo code to get 20% off!</h3>
+                                    <!--- Promo code is com311 --->
+                                </label>
+                                <br>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <input type="text" onchange="rentalCalc()" id="promoCode" placeholder="enter promo code here">
+                                <br>
+                            </th>
+                        </tr>
+
+
+
+
+                        <tr>
+                            <th>
+                                <input id="saveForm" class="button_text" type="submit" name="submit" value="Confirm Rental" />
+                            </th>
+                        </tr>
+
+                    </table>
+                    </form>
+                </div>
+
+
+                <!-- end of form -->
+
+                <script src="js/cars.js"></script>
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+</body>
+
+</html>
