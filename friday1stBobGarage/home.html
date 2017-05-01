@@ -1,0 +1,162 @@
+<html>
+
+<head>
+    <title>Bobs Garage</title>
+    <link rel="stylesheet" href="css/banner.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/logo2.png" type="image/gif" sizes="16x16">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/time.js"></script>
+    <script src="js/general.js"></script>
+
+</head>
+
+<body onload="startTime();">
+
+
+
+    <ul class="topnav" id="myTopnav">
+
+        <li><a href="home.html">Home</a>
+        </li>
+        <li><a href="hire.html">Hire a Car</a>
+        </li>
+        <li><a href="contactUs.html">Contact Us</a>
+        </li>
+        <li>
+            <div id="timecurrent">&nbsp;</div>
+        </li>
+
+    </ul>
+
+
+    <div id="container">
+
+
+        <div id="bannerlogo">
+            <a href="home.html"><img src="images/logo2.png" alt="bob's garage logo" class="headerLogo2" /></a>
+
+            <div class="animation-container">
+
+
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="car1.jpg" alt="image of car in distance in slideshow"/>
+
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="car2.jpg" alt="image of thunderbird car in slideshow"/>
+
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="car4.jpg" alt="image of car bumper in slideshow"/>
+
+                </div>
+
+            </div>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <script>
+            //animation banner
+            var slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                setTimeout(showSlides, 5000); // Change image every 5 seconds
+            }
+        </script>
+
+
+
+        <div id="container">
+
+            <div id="firstlineimages">
+
+                <h2>Car rental made simple.</h2>
+                <figure>
+                    <img src="Images/details.png" alt="icon to show reviews" />
+                    <figcaption>Reviews</figcaption>
+                    <figcaption>Car was easy to hire and was great to drive - Hannah</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="Images/deals.png" alt="icon to show deals" />
+                    <figcaption>Deals</figcaption>
+                    <figcaption>Find cars to rent out today for just &#163; 25.00</figcaption>
+                </figure>
+
+
+                <figure>
+                    <img src="Images/car.png" alt="icon to show car sizes" />
+                    <figcaption>Car Sizes</figcaption>
+                    <figcaption>We have all size of cars available for any occasion!</figcaption>
+                </figure>
+            </div>
+
+
+
+
+
+            <div id="AboutUs">
+                 <h2>Meet the team.</h2>
+                <div id="centerHome">
+
+                    <div class="Aboutimg">
+
+                        <img src="images/claire.jpg" alt="saleswoman claire"/>
+                        </br>
+                        <button id="request">Learn more about Claire!</button>
+                        <div id="bio"></div>
+                    </div>
+
+                    <div class="Aboutimg">
+
+                        <img src="images/joe.jpg" alt="salesman joe"/>
+                        </br>
+                        <button id="request3">Learn more about Joe!</button>
+                        <div id="joe"></div>
+                    </div>
+                    <div class="Aboutimg">
+
+                        <img src="images/holly.jpg" alt="saleswoman holly"/>
+                        </br>
+                        <button id="request2">Learn more about Holly!</button>
+                        <div id="holly"></div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+</body>
+
+</html>
